@@ -1,0 +1,813 @@
+/* ======================================================
+   CALORIETRACK - MEALS PAGE
+   ====================================================== */
+
+
+/* ======================================================
+   PAGE
+   ====================================================== */
+
+.meals-page {
+    width: 90%;
+    max-width: 1280px;
+
+    margin: 0 auto;
+
+    padding: 45px 0 60px;
+}
+
+
+/* ======================================================
+   PAGE HEADER
+   ====================================================== */
+
+.page-header {
+    margin-bottom: 25px;
+}
+
+.page-header h1 {
+    margin: 0 0 8px;
+
+    color: #182b49;
+
+    font-size: 36px;
+
+    font-weight: 700;
+}
+
+.page-header p {
+    margin: 0;
+
+    color: #526581;
+
+    font-size: 17px;
+}
+
+
+/* ======================================================
+   DATE SECTION
+   ====================================================== */
+
+.date-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 20px;
+
+    background: #ffffff;
+
+    padding: 25px 28px;
+
+    margin-bottom: 28px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e4e9ef;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* DATE SELECTOR */
+
+.date-selector {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 8px;
+}
+
+.date-selector label {
+    color: #182b49;
+
+    font-size: 15px;
+
+    font-weight: 600;
+}
+
+.date-selector input {
+    width: 170px;
+
+    padding: 12px 14px;
+
+    border: 1px solid #d4dce6;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #182b49;
+
+    font-size: 15px;
+
+    outline: none;
+
+    cursor: pointer;
+}
+
+.date-selector input:focus {
+    border-color: #16a34a;
+
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+}
+
+
+/* ======================================================
+   DAILY CALORIE GOAL
+   ====================================================== */
+
+.goal-section {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 30px;
+
+    background: #ffffff;
+
+    padding: 25px 28px;
+
+    margin-bottom: 28px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e4e9ef;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* GOAL TEXT */
+
+.goal-header {
+    flex: 1;
+}
+
+.goal-header h2 {
+    margin: 0 0 7px;
+
+    color: #182b49;
+
+    font-size: 22px;
+
+    font-weight: 700;
+}
+
+.goal-header p {
+    margin: 0;
+
+    color: #66758a;
+
+    font-size: 15px;
+}
+
+
+/* GOAL FORM */
+
+.goal-form {
+    display: flex;
+
+    align-items: center;
+
+    gap: 10px;
+
+    flex-shrink: 0;
+}
+
+
+/* GOAL INPUT */
+
+.goal-form input {
+    width: 150px;
+
+    height: 45px;
+
+    padding: 0 13px;
+
+    border: 1px solid #d4dce6;
+
+    border-radius: 9px;
+
+    background: #ffffff;
+
+    color: #182b49;
+
+    font-size: 16px;
+
+    font-weight: 500;
+
+    outline: none;
+
+    box-sizing: border-box;
+}
+
+.goal-form input:focus {
+    border-color: #16a34a;
+
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+}
+
+
+/* KCAL */
+
+.goal-form span {
+    color: #526581;
+
+    font-size: 15px;
+
+    font-weight: 500;
+}
+
+
+/* SAVE BUTTON */
+
+.goal-form .btn {
+    height: 45px;
+
+    padding: 0 20px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.goal-form .btn:hover {
+    transform: translateY(-1px);
+}
+
+
+/* ======================================================
+   DAILY SUMMARY
+   ====================================================== */
+
+.daily-summary {
+    display: grid;
+
+    grid-template-columns:
+        repeat(5, 1fr);
+
+    gap: 18px;
+
+    margin-bottom: 28px;
+}
+
+
+/* SUMMARY CARD */
+
+.summary-card {
+    display: flex;
+
+    flex-direction: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    min-height: 115px;
+
+    padding: 20px;
+
+    background: #ffffff;
+
+    border: 1px solid #e4e9ef;
+
+    border-radius: 14px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+    text-align: center;
+}
+
+
+/* LABEL */
+
+.summary-label {
+    margin-bottom: 12px;
+
+    color: #66758a;
+
+    font-size: 15px;
+}
+
+
+/* VALUE */
+
+.summary-card strong {
+    color: #182b49;
+
+    font-size: 21px;
+
+    font-weight: 700;
+}
+
+
+/* ======================================================
+   DAILY PROGRESS
+   ====================================================== */
+
+.progress-section {
+    background: #ffffff;
+
+    padding: 25px 28px;
+
+    margin-bottom: 30px;
+
+    border-radius: 14px;
+
+    border: 1px solid #e4e9ef;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+}
+
+
+/* PROGRESS HEADER */
+
+.progress-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    margin-bottom: 15px;
+}
+
+.progress-header h2 {
+    margin: 0;
+
+    color: #182b49;
+
+    font-size: 21px;
+}
+
+.progress-header strong {
+    color: #16a34a;
+
+    font-size: 18px;
+}
+
+
+/* PROGRESS BAR */
+
+.progress-bar {
+    width: 100%;
+
+    height: 14px;
+
+    background: #edf0f3;
+
+    border-radius: 20px;
+
+    overflow: hidden;
+}
+
+
+/* PROGRESS FILL */
+
+.progress-fill {
+    width: 0%;
+
+    height: 100%;
+
+    background: #16a34a;
+
+    border-radius: 20px;
+
+    transition: width 0.4s ease;
+}
+
+
+/* TARGET TEXT */
+
+.progress-section > p {
+    margin: 13px 0 0;
+
+    color: #66758a;
+
+    font-size: 14px;
+}
+
+.progress-section > p strong {
+    color: #182b49;
+}
+
+
+/* ======================================================
+   MEALS CONTAINER
+   ====================================================== */
+
+.meals-container {
+    display: grid;
+
+    grid-template-columns:
+        repeat(2, 1fr);
+
+    gap: 22px;
+}
+
+
+/* ======================================================
+   MEAL CARD
+   ====================================================== */
+
+.meal-card {
+    background: #ffffff;
+
+    border: 1px solid #e4e9ef;
+
+    border-radius: 14px;
+
+    padding: 24px;
+
+    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+
+    min-height: 180px;
+
+    box-sizing: border-box;
+}
+
+
+/* ======================================================
+   MEAL HEADER
+   ====================================================== */
+
+.meal-header {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding-bottom: 17px;
+
+    margin-bottom: 15px;
+
+    border-bottom: 1px solid #edf0f3;
+}
+
+.meal-header h2 {
+    margin: 0 0 5px;
+
+    color: #182b49;
+
+    font-size: 20px;
+}
+
+.meal-header p {
+    margin: 0;
+
+    color: #7a8798;
+
+    font-size: 14px;
+}
+
+.meal-header > strong {
+    color: #16a34a;
+
+    font-size: 16px;
+
+    white-space: nowrap;
+}
+
+
+/* ======================================================
+   MEAL ITEMS
+   ====================================================== */
+
+.meal-items {
+    display: flex;
+
+    flex-direction: column;
+
+    gap: 10px;
+}
+
+
+/* ======================================================
+   FOOD ITEM
+   ====================================================== */
+
+.meal-food-item {
+    display: flex;
+
+    align-items: center;
+
+    justify-content: space-between;
+
+    gap: 15px;
+
+    padding: 13px 14px;
+
+    background: #f8fafb;
+
+    border: 1px solid #edf0f3;
+
+    border-radius: 9px;
+
+    transition: 0.2s ease;
+}
+
+.meal-food-item:hover {
+    background: #f3f8f5;
+
+    border-color: #dcefe3;
+}
+
+
+/* FOOD NAME */
+
+.meal-food-item strong {
+    color: #182b49;
+
+    font-size: 15px;
+}
+
+.meal-food-item p {
+    margin: 5px 0 0;
+
+    color: #7a8798;
+
+    font-size: 13px;
+}
+
+
+/* ======================================================
+   DELETE BUTTON
+   ====================================================== */
+
+.delete-food {
+    margin-left: 12px;
+
+    width: 30px;
+
+    height: 30px;
+
+    border: none;
+
+    border-radius: 7px;
+
+    background: #fff1f1;
+
+    color: #dc2626;
+
+    font-size: 16px;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.delete-food:hover {
+    background: #fee2e2;
+
+    transform: scale(1.05);
+}
+
+
+/* ======================================================
+   EMPTY MESSAGE
+   ====================================================== */
+
+.empty-message {
+    padding: 20px;
+
+    margin: 0;
+
+    text-align: center;
+
+    color: #8a96a6;
+
+    font-size: 14px;
+
+    background: #fafbfc;
+
+    border-radius: 9px;
+
+    border: 1px dashed #dce2e8;
+}
+
+
+/* ======================================================
+   CLEAR DAY
+   ====================================================== */
+
+.clear-section {
+    display: flex;
+
+    justify-content: center;
+
+    margin-top: 30px;
+}
+
+.danger-btn {
+    padding: 12px 22px;
+
+    border: none;
+
+    border-radius: 9px;
+
+    background: #dc2626;
+
+    color: #ffffff;
+
+    font-size: 14px;
+
+    font-weight: 600;
+
+    cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.danger-btn:hover {
+    background: #b91c1c;
+
+    transform: translateY(-1px);
+}
+
+
+/* ======================================================
+   RESPONSIVE - TABLET
+   ====================================================== */
+
+@media (max-width: 1000px) {
+
+    .daily-summary {
+        grid-template-columns:
+            repeat(3, 1fr);
+    }
+
+
+    .goal-section {
+        align-items: flex-start;
+
+        flex-direction: column;
+    }
+
+
+    .goal-form {
+        width: 100%;
+    }
+
+}
+
+
+/* ======================================================
+   RESPONSIVE - MOBILE
+   ====================================================== */
+
+@media (max-width: 700px) {
+
+    .meals-page {
+        width: 92%;
+
+        padding-top: 30px;
+    }
+
+
+    .page-header h1 {
+        font-size: 29px;
+    }
+
+
+    .page-header p {
+        font-size: 15px;
+    }
+
+
+    /* DATE */
+
+    .date-section {
+        flex-direction: column;
+
+        align-items: stretch;
+    }
+
+
+    .date-selector input {
+        width: 100%;
+    }
+
+
+    .date-section .btn {
+        width: 100%;
+
+        text-align: center;
+
+        box-sizing: border-box;
+    }
+
+
+    /* GOAL */
+
+    .goal-section {
+        padding: 22px;
+
+        gap: 20px;
+    }
+
+
+    .goal-form {
+        display: grid;
+
+        grid-template-columns: 1fr auto;
+
+        width: 100%;
+    }
+
+
+    .goal-form input {
+        width: 100%;
+    }
+
+
+    .goal-form .btn {
+        grid-column: 1 / -1;
+
+        width: 100%;
+    }
+
+
+    /* SUMMARY */
+
+    .daily-summary {
+        grid-template-columns:
+            repeat(2, 1fr);
+
+        gap: 12px;
+    }
+
+
+    .summary-card {
+        min-height: 100px;
+
+        padding: 15px;
+    }
+
+
+    .summary-card strong {
+        font-size: 17px;
+    }
+
+
+    /* MEALS */
+
+    .meals-container {
+        grid-template-columns: 1fr;
+    }
+
+
+    .meal-card {
+        padding: 20px;
+    }
+
+}
+
+
+/* ======================================================
+   SMALL MOBILE
+   ====================================================== */
+
+@media (max-width: 450px) {
+
+    .daily-summary {
+        grid-template-columns: 1fr;
+    }
+
+
+    .goal-form {
+        grid-template-columns: 1fr;
+    }
+
+
+    .goal-form span {
+        display: none;
+    }
+
+
+    .goal-form .btn {
+        grid-column: auto;
+    }
+
+
+    .meal-food-item {
+        align-items: flex-start;
+    }
+
+}

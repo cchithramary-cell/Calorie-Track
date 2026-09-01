@@ -1,0 +1,414 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calorie Calculator - CalorieTrack</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- Calculator CSS -->
+    <link rel="stylesheet" href="css/calculator.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+      <div class="logo">🍎 CalorieTrack</div>
+
+      <nav>
+        <a href="index.html"> Home </a>
+
+        <a href="meals.html"> Track Meals </a>
+
+        <a href="calculator.html" class="active"> Calorie Calculator </a>
+
+        <a href="history.html">Track Calories Intake</a>
+
+        <a href="about.html"> About </a>
+      </nav>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="calculator-page">
+      <!-- ================= PAGE HEADER ================= -->
+
+      <section class="page-header">
+        <h1>Calorie Calculator</h1>
+
+        <p>
+          Calculate calories from our food list or manually add a food that is
+          not available.
+        </p>
+      </section>
+
+      <!-- ================= CALCULATOR CONTAINER ================= -->
+
+      <section class="calculator-container">
+        <!-- ================================================= -->
+        <!-- INPUT CARD -->
+        <!-- ================================================= -->
+
+        <div class="calculator-card">
+          <h2>Add Food</h2>
+
+          <!-- ================= ADD METHOD ================= -->
+
+          <div class="form-group">
+            <label> How do you want to add your food? </label>
+
+            <div class="add-method">
+              <button
+                type="button"
+                id="databaseFoodBtn"
+                class="method-btn active"
+              >
+                🍎 Choose From Food List
+              </button>
+
+              <button type="button" id="manualFoodBtn" class="method-btn">
+                ✏️ Enter Manually
+              </button>
+            </div>
+          </div>
+
+          <!-- ================================================= -->
+          <!-- PREDEFINED FOOD FORM -->
+          <!-- ================================================= -->
+
+          <div id="databaseFoodForm">
+            <!-- FOOD -->
+
+            <div class="form-group">
+              <label for="foodSelect"> Select Food </label>
+
+              <select id="foodSelect">
+                <option value="">-- Select Food --</option>
+              </select>
+            </div>
+
+            <!-- QUANTITY -->
+
+            <div class="form-group">
+              <label for="quantity"> Quantity </label>
+
+              <div class="quantity-input">
+                <input
+                  type="number"
+                  id="quantity"
+                  min="0.1"
+                  step="0.1"
+                  placeholder="Enter quantity"
+                />
+
+                <span id="unitDisplay" class="unit-display"> g </span>
+              </div>
+            </div>
+
+            <!-- MEAL -->
+
+            <div class="form-group">
+              <label for="mealSelect"> Meal </label>
+
+              <select id="mealSelect">
+                <option value="Breakfast">Breakfast</option>
+
+                <option value="Lunch">Lunch</option>
+
+                <option value="Snacks">Snacks</option>
+
+                <option value="Dinner">Dinner</option>
+              </select>
+            </div>
+
+            <!-- CALCULATE -->
+
+            <button
+              type="button"
+              id="calculateBtn"
+              class="btn primary-btn calculator-btn"
+            >
+              Calculate
+            </button>
+          </div>
+
+          <!-- ================================================= -->
+          <!-- MANUAL FOOD FORM -->
+          <!-- ================================================= -->
+
+          <div id="manualFoodForm" style="display: none">
+            <!-- FOOD NAME -->
+
+            <div class="form-group">
+              <label for="manualFoodName"> Food Name </label>
+
+              <input
+                type="text"
+                id="manualFoodName"
+                placeholder="Example: Homemade Pasta"
+              />
+            </div>
+
+            <!-- QUANTITY -->
+
+            <div class="form-group">
+              <label for="manualQuantity"> Quantity </label>
+
+              <div class="quantity-input">
+                <input
+                  type="number"
+                  id="manualQuantity"
+                  min="0.1"
+                  step="0.1"
+                  placeholder="Enter quantity"
+                />
+
+                <select id="manualUnit">
+                  <option value="g">grams</option>
+
+                  <option value="ml">ml</option>
+
+                  <option value="piece">piece</option>
+
+                  <option value="serving">serving</option>
+                </select>
+              </div>
+            </div>
+
+            <!-- CALORIES -->
+
+            <div class="form-group">
+              <label for="manualCalories"> Calories (kcal) </label>
+
+              <input
+                type="number"
+                id="manualCalories"
+                min="0"
+                step="0.1"
+                placeholder="Enter calories"
+              />
+            </div>
+
+            <!-- PROTEIN -->
+
+            <div class="form-group">
+              <label for="manualProtein">
+                Protein (g)
+                <span class="optional"> Optional </span>
+              </label>
+
+              <input
+                type="number"
+                id="manualProtein"
+                min="0"
+                step="0.1"
+                placeholder="Enter protein"
+              />
+            </div>
+
+            <!-- CARBS -->
+
+            <div class="form-group">
+              <label for="manualCarbs">
+                Carbohydrates (g)
+                <span class="optional"> Optional </span>
+              </label>
+
+              <input
+                type="number"
+                id="manualCarbs"
+                min="0"
+                step="0.1"
+                placeholder="Enter carbohydrates"
+              />
+            </div>
+
+            <!-- FAT -->
+
+            <div class="form-group">
+              <label for="manualFat">
+                Fat (g)
+                <span class="optional"> Optional </span>
+              </label>
+
+              <input
+                type="number"
+                id="manualFat"
+                min="0"
+                step="0.1"
+                placeholder="Enter fat"
+              />
+            </div>
+
+            <!-- MEAL -->
+
+            <div class="form-group">
+              <label for="manualMealSelect"> Meal </label>
+
+              <select id="manualMealSelect">
+                <option value="Breakfast">Breakfast</option>
+
+                <option value="Lunch">Lunch</option>
+
+                <option value="Snacks">Snacks</option>
+
+                <option value="Dinner">Dinner</option>
+              </select>
+            </div>
+
+            <!-- MANUAL ADD -->
+
+            <button
+              type="button"
+              id="manualAddBtn"
+              class="btn primary-btn calculator-btn"
+            >
+              Add Manual Food
+            </button>
+          </div>
+
+          <!-- ================= MESSAGE ================= -->
+
+          <p id="calculatorMessage" class="calculator-message"></p>
+        </div>
+
+        <!-- ================================================= -->
+        <!-- RESULT CARD -->
+        <!-- ================================================= -->
+
+        <div class="result-card">
+          <h2>Nutrition Result</h2>
+
+          <!-- SELECTED FOOD -->
+
+          <div class="selected-food">
+            <span> Food </span>
+
+            <strong id="resultFood"> — </strong>
+          </div>
+
+          <!-- QUANTITY -->
+
+          <div class="selected-food">
+            <span> Quantity </span>
+
+            <strong id="resultQuantity"> — </strong>
+          </div>
+
+          <!-- CALORIES -->
+
+          <div class="result-calories">
+            <span> Calories </span>
+
+            <strong id="resultCalories"> 0 kcal </strong>
+          </div>
+
+          <!-- NUTRITION -->
+
+          <div class="result-nutrition">
+            <!-- PROTEIN -->
+
+            <div class="result-item">
+              <span> Protein </span>
+
+              <strong id="resultProtein"> 0 g </strong>
+            </div>
+
+            <!-- CARBS -->
+
+            <div class="result-item">
+              <span> Carbohydrates </span>
+
+              <strong id="resultCarbs"> 0 g </strong>
+            </div>
+
+            <!-- FAT -->
+
+            <div class="result-item">
+              <span> Fat </span>
+
+              <strong id="resultFat"> 0 g </strong>
+            </div>
+          </div>
+
+          <!-- ADD TO MEAL -->
+
+          <button
+            type="button"
+            id="addToMealBtn"
+            class="btn secondary-btn add-meal-btn"
+            disabled
+          >
+            Add To Meal
+          </button>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- INFORMATION -->
+      <!-- ================================================= -->
+
+      <section class="calculator-info">
+        <h2>How It Works</h2>
+
+        <div class="info-grid">
+          <!-- AUTOMATIC -->
+
+          <div class="info-box">
+            <div class="info-icon">🧮</div>
+
+            <h3>Automatic Calculation</h3>
+
+            <p>
+              Choose a food from our food list, enter the quantity, and the
+              application automatically calculates calories and nutritional
+              values.
+            </p>
+          </div>
+
+          <!-- MANUAL -->
+
+          <div class="info-box">
+            <div class="info-icon">✏️</div>
+
+            <h3>Manual Entry</h3>
+
+            <p>
+              If your food is not available in the food list, you can manually
+              enter the food name and calorie value.
+            </p>
+          </div>
+        </div>
+
+        <!-- FORMULA -->
+
+        <div class="formula">
+          <strong> Automatic Calculation: </strong>
+
+          <br /><br />
+
+          Calories = Calories per 100g × Quantity ÷ 100
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+      <p>© 2026 CalorieTrack. All rights reserved.</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/main.js"></script>
+
+    <script src="data/foods.js"></script>
+
+    <script src="js/calculator.js"></script>
+  </body>
+</html>

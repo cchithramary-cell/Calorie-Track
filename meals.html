@@ -1,0 +1,512 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Track Meals - CalorieTrack</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/style.css">
+
+    <!-- Meals CSS -->
+    <link rel="stylesheet" href="css/meals.css">
+
+</head>
+
+
+<body>
+
+
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+
+        <div class="logo">
+            🍎 CalorieTrack
+        </div>
+
+
+        <nav>
+
+            <a href="index.html">
+                Home
+            </a>
+
+            <a href="meals.html" class="active">
+                Track Meals
+            </a>
+
+            <a href="calculator.html">
+                Calorie Calculator
+            </a>
+
+            <a href="history.html">
+                Track Calories Intake
+            </a>
+
+            <a href="about.html">
+                About
+            </a>
+
+        </nav>
+
+    </header>
+
+
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="meals-page">
+
+
+        <!-- ================= PAGE HEADER ================= -->
+
+        <section class="page-header">
+
+            <h1>
+                Daily Meal Tracker
+            </h1>
+
+            <p>
+                Track your food intake and monitor your daily calories.
+            </p>
+
+        </section>
+
+
+
+        <!-- ================= DATE SECTION ================= -->
+
+        <section class="date-section">
+
+            <div class="date-selector">
+
+                <label for="dateInput">
+                    📅 Select Date
+                </label>
+
+                <input
+                    type="date"
+                    id="dateInput"
+                >
+
+            </div>
+
+
+            <a
+                href="calculator.html"
+                class="btn primary-btn">
+
+                + Add Food
+
+            </a>
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- DAILY CALORIE GOAL -->
+        <!-- ================================================= -->
+
+        <section class="goal-section">
+
+
+            <div class="goal-header">
+
+                <div>
+
+                    <h2>
+                        🎯 Daily Calorie Goal
+                    </h2>
+
+                    <p>
+                        Set your personal daily calorie target.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+            <div class="goal-form">
+
+                <input
+                    type="number"
+                    id="dailyGoalInput"
+                    min="500"
+                    max="10000"
+                    placeholder="Enter calories"
+                >
+
+
+                <span>
+                    kcal
+                </span>
+
+
+                <button
+                    type="button"
+                    id="saveGoalBtn"
+                    class="btn primary-btn">
+
+                    Save Goal
+
+                </button>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- DAILY SUMMARY -->
+        <!-- ================================================= -->
+
+        <section class="daily-summary">
+
+
+            <!-- TOTAL CALORIES -->
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    Consumed
+                </span>
+
+                <strong id="totalCalories">
+                    0 kcal
+                </strong>
+
+            </div>
+
+
+
+            <!-- REMAINING -->
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    Remaining
+                </span>
+
+                <strong id="remainingCalories">
+                    2000 kcal
+                </strong>
+
+            </div>
+
+
+
+            <!-- PROTEIN -->
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    Protein
+                </span>
+
+                <strong id="totalProtein">
+                    Not provided
+                </strong>
+
+            </div>
+
+
+
+            <!-- CARBS -->
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    Carbohydrates
+                </span>
+
+                <strong id="totalCarbs">
+                    Not provided
+                </strong>
+
+            </div>
+
+
+
+            <!-- FAT -->
+
+            <div class="summary-card">
+
+                <span class="summary-label">
+                    Fat
+                </span>
+
+                <strong id="totalFat">
+                    Not provided
+                </strong>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- PROGRESS -->
+        <!-- ================================================= -->
+
+        <section class="progress-section">
+
+
+            <div class="progress-header">
+
+                <h2>
+                    Daily Progress
+                </h2>
+
+                <strong id="progressPercentage">
+                    0%
+                </strong>
+
+            </div>
+
+
+            <div class="progress-bar">
+
+                <div
+                    id="progressFill"
+                    class="progress-fill">
+                </div>
+
+            </div>
+
+
+            <p>
+                Daily target:
+                <strong id="dailyTargetText">
+                    2000 kcal
+                </strong>
+            </p>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- MEALS -->
+        <!-- ================================================= -->
+
+        <section class="meals-container">
+
+
+            <!-- ================= BREAKFAST ================= -->
+
+            <div class="meal-card">
+
+                <div class="meal-header">
+
+                    <div>
+
+                        <h2>
+                            🍳 Breakfast
+                        </h2>
+
+                        <p>
+                            Morning meal
+                        </p>
+
+                    </div>
+
+
+                    <strong id="breakfastCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="breakfastItems"
+                    class="meal-items">
+
+                    <p class="empty-message">
+                        No food added yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= LUNCH ================= -->
+
+            <div class="meal-card">
+
+                <div class="meal-header">
+
+                    <div>
+
+                        <h2>
+                            🍚 Lunch
+                        </h2>
+
+                        <p>
+                            Afternoon meal
+                        </p>
+
+                    </div>
+
+
+                    <strong id="lunchCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="lunchItems"
+                    class="meal-items">
+
+                    <p class="empty-message">
+                        No food added yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= SNACKS ================= -->
+
+            <div class="meal-card">
+
+                <div class="meal-header">
+
+                    <div>
+
+                        <h2>
+                            🍎 Snacks
+                        </h2>
+
+                        <p>
+                            Snacks and small meals
+                        </p>
+
+                    </div>
+
+
+                    <strong id="snacksCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="snacksItems"
+                    class="meal-items">
+
+                    <p class="empty-message">
+                        No food added yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+
+            <!-- ================= DINNER ================= -->
+
+            <div class="meal-card">
+
+                <div class="meal-header">
+
+                    <div>
+
+                        <h2>
+                            🍽️ Dinner
+                        </h2>
+
+                        <p>
+                            Evening meal
+                        </p>
+
+                    </div>
+
+
+                    <strong id="dinnerCalories">
+                        0 kcal
+                    </strong>
+
+                </div>
+
+
+                <div
+                    id="dinnerItems"
+                    class="meal-items">
+
+                    <p class="empty-message">
+                        No food added yet.
+                    </p>
+
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+
+        <!-- ================================================= -->
+        <!-- CLEAR DAY -->
+        <!-- ================================================= -->
+
+        <section class="clear-section">
+
+            <button
+                type="button"
+                id="clearDayBtn"
+                class="btn danger-btn">
+
+                🗑️ Clear This Day
+
+            </button>
+
+        </section>
+
+
+    </main>
+
+
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+
+        <p>
+            © 2026 CalorieTrack. All rights reserved.
+        </p>
+
+    </footer>
+
+
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/main.js"></script>
+
+    <script src="js/meals.js"></script>
+
+</body>
+
+</html>

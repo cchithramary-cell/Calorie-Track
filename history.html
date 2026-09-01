@@ -1,0 +1,276 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+
+    <title>Calorie History - CalorieTrack</title>
+
+    <!-- Common CSS -->
+    <link rel="stylesheet" href="css/style.css" />
+
+    <!-- History CSS -->
+    <link rel="stylesheet" href="css/history.css" />
+  </head>
+
+  <body>
+    <!-- ================= NAVBAR ================= -->
+
+    <header class="navbar">
+      <div class="logo">🍎 CalorieTrack</div>
+
+      <nav>
+        <a href="index.html"> Home </a>
+
+        <a href="meals.html"> Track Meals </a>
+
+        <a href="calculator.html"> Calorie Calculator </a>
+
+        <a href="history.html" class="active"> Track Calories Intake </a>
+
+        <a href="about.html"> About </a>
+      </nav>
+    </header>
+
+    <!-- ================= MAIN ================= -->
+
+    <main class="history-page">
+      <!-- ================= PAGE HEADER ================= -->
+
+      <section class="page-header">
+        <span class="history-badge"> 📊 Your Progress </span>
+
+        <h1>Calorie History</h1>
+
+        <p>View and monitor your daily calorie intake across different days.</p>
+      </section>
+
+      <!-- ================= SUMMARY ================= -->
+
+      <section class="history-summary">
+        <!-- DAYS TRACKED -->
+
+        <div class="history-summary-card">
+          <div class="summary-icon">📅</div>
+
+          <div class="summary-content">
+            <p>Days Tracked</p>
+
+            <strong id="daysTracked"> 0 </strong>
+          </div>
+        </div>
+
+        <!-- AVERAGE -->
+
+        <div class="history-summary-card">
+          <div class="summary-icon">📊</div>
+
+          <div class="summary-content">
+            <p>Average Calories</p>
+
+            <strong id="averageCalories"> 0 kcal </strong>
+          </div>
+        </div>
+
+        <!-- HIGHEST -->
+
+        <div class="history-summary-card">
+          <div class="summary-icon">🔥</div>
+
+          <div class="summary-content">
+            <p>Highest Intake</p>
+
+            <strong id="highestCalories"> 0 kcal </strong>
+          </div>
+        </div>
+
+        <!-- LOWEST -->
+
+        <div class="history-summary-card">
+          <div class="summary-icon">🌱</div>
+
+          <div class="summary-content">
+            <p>Lowest Intake</p>
+
+            <strong id="lowestCalories"> 0 kcal </strong>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- CALORIE CHART -->
+      <!-- ================================================= -->
+
+      <section class="chart-card">
+        <div class="chart-header">
+          <div>
+            <span class="section-label"> CALORIE TREND </span>
+
+            <h2>Daily Calorie Intake</h2>
+
+            <p>Track how your calorie intake changes across different days.</p>
+          </div>
+
+          <div class="chart-legend">
+            <span class="legend-item">
+              <span class="legend-dot intake-dot"></span>
+
+              Calorie Intake
+            </span>
+
+            <span class="legend-item">
+              <span class="legend-line"></span>
+
+              Daily Goal
+            </span>
+          </div>
+        </div>
+
+        <!-- CHART -->
+
+        <div class="chart-wrapper">
+          <canvas id="calorieChart"></canvas>
+        </div>
+
+        <!-- NO CHART DATA -->
+
+        <div id="emptyChart" class="empty-chart">
+          <div>📈</div>
+
+          <p>Add meals to see your calorie trend.</p>
+        </div>
+      </section>
+
+      <!-- ================= FILTER ================= -->
+
+      <section class="history-filter">
+        <div class="filter-title">
+          <span class="filter-icon"> 🔎 </span>
+
+          <div>
+            <h3>Filter History</h3>
+
+            <p>Select a date range to view your intake.</p>
+          </div>
+        </div>
+
+        <div class="filter-controls">
+          <div class="filter-group">
+            <label for="fromDate"> From </label>
+
+            <input type="date" id="fromDate" />
+          </div>
+
+          <div class="filter-group">
+            <label for="toDate"> To </label>
+
+            <input type="date" id="toDate" />
+          </div>
+
+          <button type="button" id="filterBtn" class="btn primary-btn">
+            🔎 Filter
+          </button>
+
+          <button type="button" id="resetFilterBtn" class="btn secondary-btn">
+            ↻ Reset
+          </button>
+        </div>
+      </section>
+
+      <!-- ================= HISTORY CARD ================= -->
+
+      <section class="history-card">
+        <!-- HEADER -->
+
+        <div class="history-card-header">
+          <div>
+            <span class="section-label"> DAILY RECORDS </span>
+
+            <h2>Daily Calorie Intake</h2>
+
+            <p>A summary of your recorded calorie intake by date.</p>
+          </div>
+
+          <a href="calculator.html" class="btn primary-btn"> + Add Food </a>
+        </div>
+
+        <!-- ================= TABLE ================= -->
+
+        <div class="table-wrapper">
+          <table>
+            <thead>
+              <tr>
+                <th>Date</th>
+
+                <th>Calories</th>
+
+                <th>Daily Goal</th>
+
+                <th>Status</th>
+
+                <th>Action</th>
+              </tr>
+            </thead>
+
+            <tbody id="historyTableBody">
+              <!-- JavaScript will create rows -->
+            </tbody>
+          </table>
+        </div>
+
+        <!-- ================= EMPTY STATE ================= -->
+
+        <div id="emptyHistory" class="empty-history">
+          <div class="empty-icon">🍽️</div>
+
+          <h3>No calorie history yet</h3>
+
+          <p>Start adding meals to see your daily calorie history here.</p>
+
+          <a href="calculator.html" class="btn primary-btn">
+            + Add Your First Food
+          </a>
+        </div>
+      </section>
+
+      <!-- ================= STATUS GUIDE ================= -->
+
+      <section class="status-guide">
+        <h3>Understanding Your Status</h3>
+
+        <div class="status-guide-items">
+          <div>
+            <span class="status-badge status-good"> Within Goal </span>
+
+            <p>Your intake is close to your daily target.</p>
+          </div>
+
+          <div>
+            <span class="status-badge status-under"> Below Goal </span>
+
+            <p>Your intake is below your daily target.</p>
+          </div>
+
+          <div>
+            <span class="status-badge status-over"> Over Goal </span>
+
+            <p>Your intake has exceeded your daily target.</p>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <!-- ================= FOOTER ================= -->
+
+    <footer>
+      <p>© 2026 CalorieTrack. All rights reserved.</p>
+    </footer>
+
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <script src="js/main.js"></script>
+
+    <script src="js/history.js"></script>
+  </body>
+</html>
