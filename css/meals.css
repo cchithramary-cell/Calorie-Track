@@ -2,7 +2,6 @@
    CALORIETRACK - MEALS PAGE
    ====================================================== */
 
-
 /* ======================================================
    PAGE
    ====================================================== */
@@ -10,10 +9,8 @@
 .meals-page {
     width: 90%;
     max-width: 1280px;
-
     margin: 0 auto;
-
-    padding: 45px 0 60px;
+    padding: 50px 0 70px;
 }
 
 
@@ -22,25 +19,21 @@
    ====================================================== */
 
 .page-header {
-    margin-bottom: 25px;
+    margin-bottom: 30px;
 }
 
 .page-header h1 {
-    margin: 0 0 8px;
-
+    margin: 0 0 10px;
     color: #182b49;
-
-    font-size: 36px;
-
+    font-size: 38px;
     font-weight: 700;
 }
 
 .page-header p {
     margin: 0;
-
-    color: #526581;
-
-    font-size: 17px;
+    color: #64748b;
+    font-size: 16px;
+    line-height: 1.6;
 }
 
 
@@ -50,100 +43,101 @@
 
 .date-section {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
+    gap: 25px;
 
-    gap: 20px;
+    padding: 24px 26px;
+    margin-bottom: 25px;
 
     background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
 
-    padding: 25px 28px;
-
-    margin-bottom: 28px;
-
-    border-radius: 14px;
-
-    border: 1px solid #e4e9ef;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
 }
 
 
-/* DATE SELECTOR */
+/* ======================================================
+   DATE SELECTOR
+   ====================================================== */
 
 .date-selector {
     display: flex;
-
     flex-direction: column;
-
-    gap: 8px;
+    gap: 7px;
 }
 
 .date-selector label {
     color: #182b49;
-
-    font-size: 15px;
-
+    font-size: 14px;
     font-weight: 600;
 }
 
 .date-selector input {
-    width: 170px;
+    width: 190px;
+    height: 44px;
 
-    padding: 12px 14px;
+    padding: 0 12px;
 
-    border: 1px solid #d4dce6;
-
+    border: 1px solid #d5dde7;
     border-radius: 9px;
 
     background: #ffffff;
-
     color: #182b49;
 
-    font-size: 15px;
+    font-family: inherit;
+    font-size: 14px;
 
     outline: none;
-
     cursor: pointer;
+
+    transition: 0.2s ease;
+}
+
+.date-selector input:hover {
+    border-color: #b8c5d3;
 }
 
 .date-selector input:focus {
     border-color: #16a34a;
-
     box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
 }
 
 
 /* ======================================================
-   DAILY CALORIE GOAL
+   DATE BUTTON
+   ====================================================== */
+
+.date-section .btn {
+    min-height: 44px;
+}
+
+
+/* ======================================================
+   DAILY GOAL
    ====================================================== */
 
 .goal-section {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
-
     gap: 30px;
 
+    padding: 25px 27px;
+    margin-bottom: 25px;
+
     background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
 
-    padding: 25px 28px;
-
-    margin-bottom: 28px;
-
-    border-radius: 14px;
-
-    border: 1px solid #e4e9ef;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
 }
 
 
-/* GOAL TEXT */
+/* ======================================================
+   GOAL HEADER
+   ====================================================== */
 
 .goal-header {
     flex: 1;
@@ -153,100 +147,67 @@
     margin: 0 0 7px;
 
     color: #182b49;
-
     font-size: 22px;
-
     font-weight: 700;
 }
 
 .goal-header p {
     margin: 0;
 
-    color: #66758a;
-
-    font-size: 15px;
+    color: #64748b;
+    font-size: 14px;
+    line-height: 1.6;
 }
 
 
-/* GOAL FORM */
+/* ======================================================
+   GOAL FORM
+   ====================================================== */
 
 .goal-form {
     display: flex;
-
     align-items: center;
-
     gap: 10px;
 
     flex-shrink: 0;
 }
 
-
-/* GOAL INPUT */
-
 .goal-form input {
-    width: 150px;
-
-    height: 45px;
+    width: 145px;
+    height: 44px;
 
     padding: 0 13px;
 
-    border: 1px solid #d4dce6;
-
+    border: 1px solid #d5dde7;
     border-radius: 9px;
 
     background: #ffffff;
-
     color: #182b49;
 
-    font-size: 16px;
-
-    font-weight: 500;
-
-    outline: none;
-
-    box-sizing: border-box;
-}
-
-.goal-form input:focus {
-    border-color: #16a34a;
-
-    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
-}
-
-
-/* KCAL */
-
-.goal-form span {
-    color: #526581;
-
+    font-family: inherit;
     font-size: 15px;
-
-    font-weight: 500;
-}
-
-
-/* SAVE BUTTON */
-
-.goal-form .btn {
-    height: 45px;
-
-    padding: 0 20px;
-
-    border: none;
-
-    border-radius: 9px;
-
-    font-size: 14px;
-
     font-weight: 600;
 
-    cursor: pointer;
+    outline: none;
+    box-sizing: border-box;
 
     transition: 0.2s ease;
 }
 
-.goal-form .btn:hover {
-    transform: translateY(-1px);
+.goal-form input:focus {
+    border-color: #16a34a;
+    box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.10);
+}
+
+.goal-form span {
+    color: #64748b;
+    font-size: 14px;
+    font-weight: 500;
+}
+
+.goal-form .btn {
+    min-height: 44px;
+    padding: 0 19px;
 }
 
 
@@ -256,61 +217,67 @@
 
 .daily-summary {
     display: grid;
+    grid-template-columns: repeat(5, 1fr);
+    gap: 16px;
 
-    grid-template-columns:
-        repeat(5, 1fr);
-
-    gap: 18px;
-
-    margin-bottom: 28px;
+    margin-bottom: 25px;
 }
 
 
-/* SUMMARY CARD */
+/* ======================================================
+   SUMMARY CARD
+   ====================================================== */
 
 .summary-card {
     display: flex;
-
     flex-direction: column;
-
     align-items: center;
-
     justify-content: center;
 
     min-height: 115px;
-
     padding: 20px;
 
     background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
 
-    border: 1px solid #e4e9ef;
-
-    border-radius: 14px;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
 
     text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.summary-card:hover {
+    transform: translateY(-3px);
+
+    box-shadow:
+        0 10px 25px rgba(15, 23, 42, 0.08);
 }
 
 
-/* LABEL */
+/* ======================================================
+   SUMMARY LABEL
+   ====================================================== */
 
 .summary-label {
-    margin-bottom: 12px;
+    margin-bottom: 10px;
 
-    color: #66758a;
-
-    font-size: 15px;
+    color: #64748b;
+    font-size: 13px;
+    font-weight: 500;
 }
 
 
-/* VALUE */
+/* ======================================================
+   SUMMARY VALUE
+   ====================================================== */
 
 .summary-card strong {
     color: #182b49;
-
     font-size: 21px;
-
     font-weight: 700;
 }
 
@@ -320,67 +287,60 @@
    ====================================================== */
 
 .progress-section {
+    padding: 25px 27px;
+    margin-bottom: 28px;
+
     background: #ffffff;
+    border: 1px solid #e2e8f0;
+    border-radius: 16px;
 
-    padding: 25px 28px;
-
-    margin-bottom: 30px;
-
-    border-radius: 14px;
-
-    border: 1px solid #e4e9ef;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.06);
 }
 
 
-/* PROGRESS HEADER */
+/* ======================================================
+   PROGRESS HEADER
+   ====================================================== */
 
 .progress-header {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
-    margin-bottom: 15px;
+    gap: 15px;
+    margin-bottom: 14px;
 }
 
 .progress-header h2 {
     margin: 0;
 
     color: #182b49;
-
     font-size: 21px;
+    font-weight: 700;
 }
 
 .progress-header strong {
     color: #16a34a;
-
-    font-size: 18px;
+    font-size: 17px;
 }
 
 
-/* PROGRESS BAR */
+/* ======================================================
+   PROGRESS BAR
+   ====================================================== */
 
 .progress-bar {
     width: 100%;
-
     height: 14px;
 
-    background: #edf0f3;
+    background: #edf2f7;
 
     border-radius: 20px;
-
     overflow: hidden;
 }
 
-
-/* PROGRESS FILL */
-
 .progress-fill {
     width: 0%;
-
     height: 100%;
 
     background: #16a34a;
@@ -391,14 +351,15 @@
 }
 
 
-/* TARGET TEXT */
+/* ======================================================
+   TARGET TEXT
+   ====================================================== */
 
 .progress-section > p {
-    margin: 13px 0 0;
+    margin: 12px 0 0;
 
-    color: #66758a;
-
-    font-size: 14px;
+    color: #64748b;
+    font-size: 13px;
 }
 
 .progress-section > p strong {
@@ -413,10 +374,9 @@
 .meals-container {
     display: grid;
 
-    grid-template-columns:
-        repeat(2, 1fr);
+    grid-template-columns: repeat(2, 1fr);
 
-    gap: 22px;
+    gap: 20px;
 }
 
 
@@ -425,17 +385,16 @@
    ====================================================== */
 
 .meal-card {
+    min-height: 180px;
+
+    padding: 23px;
+
     background: #ffffff;
 
-    border: 1px solid #e4e9ef;
+    border: 1px solid #e2e8f0;
+    border-radius: 15px;
 
-    border-radius: 14px;
-
-    padding: 24px;
-
-    box-shadow: 0 5px 18px rgba(0, 0, 0, 0.06);
-
-    min-height: 180px;
+    box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
 
     box-sizing: border-box;
 }
@@ -447,40 +406,35 @@
 
 .meal-header {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 15px;
 
-    padding-bottom: 17px;
-
+    padding-bottom: 16px;
     margin-bottom: 15px;
 
-    border-bottom: 1px solid #edf0f3;
+    border-bottom: 1px solid #edf2f7;
 }
 
 .meal-header h2 {
-    margin: 0 0 5px;
+    margin: 0 0 4px;
 
     color: #182b49;
-
     font-size: 20px;
+    font-weight: 700;
 }
 
 .meal-header p {
     margin: 0;
 
-    color: #7a8798;
-
-    font-size: 14px;
+    color: #64748b;
+    font-size: 13px;
 }
 
 .meal-header > strong {
     color: #16a34a;
-
-    font-size: 16px;
+    font-size: 15px;
 
     white-space: nowrap;
 }
@@ -492,10 +446,9 @@
 
 .meal-items {
     display: flex;
-
     flex-direction: column;
 
-    gap: 10px;
+    gap: 9px;
 }
 
 
@@ -505,78 +458,79 @@
 
 .meal-food-item {
     display: flex;
-
     align-items: center;
-
     justify-content: space-between;
 
     gap: 15px;
 
     padding: 13px 14px;
 
-    background: #f8fafb;
+    background: #f8fafc;
 
-    border: 1px solid #edf0f3;
+    border: 1px solid #edf2f7;
+    border-radius: 10px;
 
-    border-radius: 9px;
-
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease;
 }
 
 .meal-food-item:hover {
-    background: #f3f8f5;
-
-    border-color: #dcefe3;
-}
-
-
-/* FOOD NAME */
-
-.meal-food-item strong {
-    color: #182b49;
-
-    font-size: 15px;
-}
-
-.meal-food-item p {
-    margin: 5px 0 0;
-
-    color: #7a8798;
-
-    font-size: 13px;
+    background: #f0fdf4;
+    border-color: #d7efdc;
 }
 
 
 /* ======================================================
-   DELETE BUTTON
+   FOOD NAME
+   ====================================================== */
+
+.meal-food-item strong {
+    color: #182b49;
+    font-size: 14px;
+    font-weight: 600;
+}
+
+.meal-food-item p {
+    margin: 4px 0 0;
+
+    color: #718096;
+    font-size: 12px;
+}
+
+
+/* ======================================================
+   DELETE FOOD
    ====================================================== */
 
 .delete-food {
-    margin-left: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
 
-    width: 30px;
+    width: 31px;
+    height: 31px;
 
-    height: 30px;
+    margin-left: 10px;
 
     border: none;
+    border-radius: 8px;
 
-    border-radius: 7px;
-
-    background: #fff1f1;
-
+    background: #fff1f2;
     color: #dc2626;
 
-    font-size: 16px;
+    font-size: 15px;
 
     cursor: pointer;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .delete-food:hover {
     background: #fee2e2;
-
-    transform: scale(1.05);
+    transform: scale(1.06);
 }
 
 
@@ -586,20 +540,19 @@
 
 .empty-message {
     padding: 20px;
-
     margin: 0;
 
     text-align: center;
 
-    color: #8a96a6;
+    color: #8793a3;
 
-    font-size: 14px;
+    font-size: 13px;
+    line-height: 1.6;
 
-    background: #fafbfc;
+    background: #f8fafc;
 
-    border-radius: 9px;
-
-    border: 1px dashed #dce2e8;
+    border: 1px dashed #d8e0e8;
+    border-radius: 10px;
 }
 
 
@@ -609,35 +562,35 @@
 
 .clear-section {
     display: flex;
-
     justify-content: center;
 
     margin-top: 30px;
 }
 
 .danger-btn {
-    padding: 12px 22px;
+    min-height: 43px;
+
+    padding: 0 22px;
 
     border: none;
-
     border-radius: 9px;
 
     background: #dc2626;
-
     color: #ffffff;
 
-    font-size: 14px;
-
+    font-family: inherit;
+    font-size: 13px;
     font-weight: 600;
 
     cursor: pointer;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease;
 }
 
 .danger-btn:hover {
     background: #b91c1c;
-
     transform: translateY(-1px);
 }
 
@@ -646,20 +599,16 @@
    RESPONSIVE - TABLET
    ====================================================== */
 
-@media (max-width: 1000px) {
+@media (max-width: 1050px) {
 
     .daily-summary {
-        grid-template-columns:
-            repeat(3, 1fr);
+        grid-template-columns: repeat(3, 1fr);
     }
-
 
     .goal-section {
         align-items: flex-start;
-
         flex-direction: column;
     }
-
 
     .goal-form {
         width: 100%;
@@ -676,18 +625,16 @@
 
     .meals-page {
         width: 92%;
-
-        padding-top: 30px;
+        padding: 30px 0 50px;
     }
 
 
     .page-header h1 {
-        font-size: 29px;
+        font-size: 30px;
     }
 
-
     .page-header p {
-        font-size: 15px;
+        font-size: 14px;
     }
 
 
@@ -695,33 +642,26 @@
 
     .date-section {
         flex-direction: column;
-
         align-items: stretch;
-    }
 
+        padding: 20px;
+    }
 
     .date-selector input {
         width: 100%;
     }
 
-
     .date-section .btn {
         width: 100%;
-
-        text-align: center;
-
-        box-sizing: border-box;
     }
 
 
     /* GOAL */
 
     .goal-section {
-        padding: 22px;
-
+        padding: 21px;
         gap: 20px;
     }
-
 
     .goal-form {
         display: grid;
@@ -731,11 +671,9 @@
         width: 100%;
     }
 
-
     .goal-form input {
         width: 100%;
     }
-
 
     .goal-form .btn {
         grid-column: 1 / -1;
@@ -747,22 +685,24 @@
     /* SUMMARY */
 
     .daily-summary {
-        grid-template-columns:
-            repeat(2, 1fr);
-
+        grid-template-columns: repeat(2, 1fr);
         gap: 12px;
     }
 
-
     .summary-card {
         min-height: 100px;
-
         padding: 15px;
     }
 
-
     .summary-card strong {
         font-size: 17px;
+    }
+
+
+    /* PROGRESS */
+
+    .progress-section {
+        padding: 21px;
     }
 
 
@@ -771,7 +711,6 @@
     .meals-container {
         grid-template-columns: 1fr;
     }
-
 
     .meal-card {
         padding: 20px;
@@ -790,24 +729,25 @@
         grid-template-columns: 1fr;
     }
 
-
     .goal-form {
         grid-template-columns: 1fr;
     }
-
 
     .goal-form span {
         display: none;
     }
 
-
     .goal-form .btn {
         grid-column: auto;
     }
 
-
     .meal-food-item {
         align-items: flex-start;
+    }
+
+    .meal-header {
+        align-items: flex-start;
+        flex-direction: column;
     }
 
 }

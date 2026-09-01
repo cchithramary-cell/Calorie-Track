@@ -1,55 +1,46 @@
 /* ======================================================
-   CALORIETRACK - CALORIE HISTORY
+   CALORIETRACK - HISTORY PAGE
    ====================================================== */
 
-/* ======================================================
-   PAGE
-   ====================================================== */
+/* ================= PAGE ================= */
 
 .history-page {
-  width: 90%;
-
-  max-width: 1280px;
-
+  width: min(92%, 1200px);
   margin: 0 auto;
-
-  padding: 50px 0 70px;
+  padding: 55px 0 80px;
 }
 
-/* ======================================================
-   PAGE HEADER
-   ====================================================== */
+/* ================= PAGE HEADER ================= */
 
 .page-header {
   margin-bottom: 35px;
 }
 
 .history-badge {
-  display: inline-block;
+  display: inline-flex;
+  align-items: center;
+  gap: 6px;
 
-  margin-bottom: 12px;
+  margin-bottom: 14px;
+  padding: 7px 14px;
 
-  padding: 7px 13px;
+  background: #ecfdf5;
+  color: #15803d;
 
-  background: #eef8f1;
-
-  color: #16803c;
-
-  border-radius: 20px;
+  border: 1px solid #bbf7d0;
+  border-radius: 50px;
 
   font-size: 13px;
-
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .page-header h1 {
   margin: 0 0 10px;
 
-  color: #182b49;
+  color: #0f172a;
 
-  font-size: 38px;
-
-  font-weight: 700;
+  font-size: clamp(2rem, 4vw, 2.7rem);
+  line-height: 1.2;
 }
 
 .page-header p {
@@ -57,257 +48,248 @@
 
   color: #64748b;
 
-  font-size: 16px;
+  font-size: 1rem;
+  line-height: 1.7;
 }
 
 /* ======================================================
-   SUMMARY
+   SUMMARY CARDS
    ====================================================== */
 
 .history-summary {
   display: grid;
-
   grid-template-columns: repeat(4, 1fr);
-
   gap: 18px;
 
   margin-bottom: 30px;
 }
 
-/* ======================================================
-   SUMMARY CARD
-   ====================================================== */
-
 .history-summary-card {
   display: flex;
-
   align-items: center;
-
   gap: 15px;
 
-  min-height: 105px;
-
-  padding: 20px;
+  min-height: 110px;
+  padding: 22px;
 
   background: #ffffff;
 
-  border: 1px solid #e5eaf0;
+  border: 1px solid #e2e8f0;
+  border-radius: 16px;
 
-  border-radius: 14px;
-
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 6px 20px rgba(15, 23, 42, 0.05);
 
   transition:
-    transform 0.2s ease,
-    box-shadow 0.2s ease;
+    transform 0.25s ease,
+    box-shadow 0.25s ease,
+    border-color 0.25s ease;
 }
 
 .history-summary-card:hover {
-  transform: translateY(-2px);
+  transform: translateY(-4px);
 
-  box-shadow: 0 8px 24px rgba(0, 0, 0, 0.08);
+  border-color: #bbf7d0;
+
+  box-shadow: 0 12px 28px rgba(15, 23, 42, 0.08);
 }
 
-/* ======================================================
-   SUMMARY ICON
-   ====================================================== */
+/* ================= SUMMARY ICON ================= */
 
 .summary-icon {
-  display: flex;
-
-  align-items: center;
-
-  justify-content: center;
-
-  width: 50px;
-
-  height: 50px;
+  width: 52px;
+  height: 52px;
 
   flex-shrink: 0;
 
-  background: #f0f8f2;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 
-  border-radius: 12px;
+  background: #f0fdf4;
+
+  border: 1px solid #dcfce7;
+  border-radius: 14px;
 
   font-size: 23px;
 }
 
-/* ======================================================
-   SUMMARY CONTENT
-   ====================================================== */
+/* ================= SUMMARY CONTENT ================= */
 
 .summary-content p {
-  margin: 0 0 6px;
+  margin: 0 0 5px;
 
-  color: #718096;
+  color: #64748b;
 
   font-size: 13px;
+  font-weight: 500;
 }
 
 .summary-content strong {
-  color: #182b49;
+  color: #0f172a;
 
   font-size: 21px;
-
-  font-weight: 700;
+  font-weight: 750;
 }
 
 /* ======================================================
-   CALORIE CHART
+   COMMON CARD
+   ====================================================== */
+
+.chart-card,
+.history-filter,
+.history-card {
+  background: #ffffff;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 18px;
+
+  box-shadow: 0 6px 22px rgba(15, 23, 42, 0.05);
+}
+
+/* ======================================================
+   CHART
    ====================================================== */
 
 .chart-card {
+  padding: 28px;
+
   margin-bottom: 30px;
-
-  padding: 27px;
-
-  background: #ffffff;
-
-  border: 1px solid #e5eaf0;
-
-  border-radius: 14px;
-
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
 }
-
-/* ======================================================
-   CHART HEADER
-   ====================================================== */
 
 .chart-header {
   display: flex;
-
-  align-items: center;
-
+  align-items: flex-start;
   justify-content: space-between;
 
-  gap: 20px;
+  gap: 25px;
 
-  margin-bottom: 22px;
+  margin-bottom: 25px;
 }
 
 .section-label {
   display: block;
 
-  margin-bottom: 5px;
+  margin-bottom: 7px;
 
-  color: #4caf50;
+  color: #16a34a;
 
   font-size: 11px;
+  font-weight: 800;
 
-  font-weight: 700;
-
-  letter-spacing: 1px;
+  letter-spacing: 1.3px;
 }
 
-.chart-header h2 {
-  margin: 0 0 5px;
+.chart-header h2,
+.history-card-header h2 {
+  margin: 0 0 6px;
 
-  color: #182b49;
+  color: #0f172a;
 
-  font-size: 22px;
+  font-size: 1.4rem;
 }
 
-.chart-header p {
+.chart-header p,
+.history-card-header p {
   margin: 0;
 
-  color: #718096;
+  color: #64748b;
 
   font-size: 13px;
+  line-height: 1.6;
 }
 
-/* ======================================================
-   CHART LEGEND
-   ====================================================== */
+/* ================= CHART LEGEND ================= */
 
 .chart-legend {
   display: flex;
-
   align-items: center;
 
   gap: 18px;
 
-  flex-shrink: 0;
+  padding-top: 5px;
 }
 
 .legend-item {
   display: flex;
-
   align-items: center;
-
   gap: 7px;
 
   color: #64748b;
 
   font-size: 12px;
-
   font-weight: 600;
+
+  white-space: nowrap;
 }
 
 .legend-dot {
   width: 9px;
-
   height: 9px;
 
   border-radius: 50%;
 
-  background: #4caf50;
+  background: #16a34a;
 }
 
 .legend-line {
-  display: inline-block;
-
-  width: 20px;
-
+  width: 22px;
   height: 2px;
+
+  display: inline-block;
 
   background: #94a3b8;
 }
 
-/* ======================================================
-   CHART WRAPPER
-   ====================================================== */
+/* ================= CHART WRAPPER ================= */
 
 .chart-wrapper {
   position: relative;
 
   width: 100%;
-
   height: 330px;
+
+  padding-top: 5px;
 }
 
 #calorieChart {
   display: block;
 
   width: 100%;
-
   height: 100%;
 }
 
-/* ======================================================
-   EMPTY CHART
-   ====================================================== */
+/* ================= EMPTY CHART ================= */
 
 .empty-chart {
   display: none;
 
-  align-items: center;
+  min-height: 260px;
 
+  align-items: center;
   justify-content: center;
 
   flex-direction: column;
 
-  min-height: 250px;
-
-  color: #718096;
-
   text-align: center;
+
+  color: #64748b;
 }
 
 .empty-chart div {
-  margin-bottom: 10px;
+  width: 65px;
+  height: 65px;
 
-  font-size: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  margin-bottom: 12px;
+
+  background: #f0fdf4;
+
+  border-radius: 50%;
+
+  font-size: 28px;
 }
 
 .empty-chart p {
@@ -322,54 +304,39 @@
 
 .history-filter {
   display: flex;
-
   align-items: center;
-
   justify-content: space-between;
 
   gap: 25px;
 
-  margin-bottom: 30px;
-
   padding: 22px 25px;
 
-  background: #ffffff;
-
-  border: 1px solid #e5eaf0;
-
-  border-radius: 14px;
-
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  margin-bottom: 30px;
 }
 
-/* ======================================================
-   FILTER TITLE
-   ====================================================== */
+/* ================= FILTER TITLE ================= */
 
 .filter-title {
   display: flex;
-
   align-items: center;
 
   gap: 13px;
-
-  flex-shrink: 0;
 }
 
 .filter-icon {
+  width: 45px;
+  height: 45px;
+
+  flex-shrink: 0;
+
   display: flex;
-
   align-items: center;
-
   justify-content: center;
 
-  width: 43px;
+  background: #eff6ff;
 
-  height: 43px;
-
-  background: #f1f6ff;
-
-  border-radius: 10px;
+  border: 1px solid #dbeafe;
+  border-radius: 12px;
 
   font-size: 19px;
 }
@@ -377,7 +344,7 @@
 .filter-title h3 {
   margin: 0 0 4px;
 
-  color: #182b49;
+  color: #0f172a;
 
   font-size: 16px;
 }
@@ -385,18 +352,15 @@
 .filter-title p {
   margin: 0;
 
-  color: #718096;
+  color: #64748b;
 
   font-size: 12px;
 }
 
-/* ======================================================
-   FILTER CONTROLS
-   ====================================================== */
+/* ================= FILTER CONTROLS ================= */
 
 .filter-controls {
   display: flex;
-
   align-items: flex-end;
 
   gap: 12px;
@@ -404,112 +368,116 @@
 
 .filter-group {
   display: flex;
-
   flex-direction: column;
 
   gap: 6px;
 }
 
 .filter-group label {
-  color: #526581;
+  color: #475569;
 
   font-size: 12px;
-
-  font-weight: 600;
+  font-weight: 700;
 }
 
 .filter-group input {
   width: 155px;
-
   height: 42px;
 
   padding: 0 11px;
 
-  border: 1px solid #d5dce5;
-
-  border-radius: 8px;
-
   background: #ffffff;
 
-  color: #182b49;
+  border: 1px solid #cbd5e1;
+  border-radius: 9px;
+
+  color: #0f172a;
 
   font-family: inherit;
-
   font-size: 13px;
 
   outline: none;
 
-  box-sizing: border-box;
+  transition:
+    border-color 0.2s ease,
+    box-shadow 0.2s ease;
+}
 
-  cursor: pointer;
+.filter-group input:hover {
+  border-color: #94a3b8;
 }
 
 .filter-group input:focus {
   border-color: #16a34a;
 
-  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.12);
 }
 
 /* ======================================================
    BUTTONS
    ====================================================== */
 
-.btn {
-  display: inline-flex;
-
-  align-items: center;
-
-  justify-content: center;
-
+.history-page .btn {
   min-height: 42px;
+
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
 
   padding: 0 17px;
 
-  border-radius: 8px;
+  border-radius: 9px;
 
-  border: none;
+  font-family: inherit;
+  font-size: 13px;
+  font-weight: 700;
 
   text-decoration: none;
 
-  font-family: inherit;
-
-  font-size: 13px;
-
-  font-weight: 600;
-
   cursor: pointer;
 
-  box-sizing: border-box;
-
-  transition: all 0.2s ease;
+  transition:
+    transform 0.2s ease,
+    background 0.2s ease,
+    box-shadow 0.2s ease;
 }
 
-/* PRIMARY */
+/* ================= PRIMARY ================= */
 
-.primary-btn {
-  background: #4caf50;
+.history-page .primary-btn {
+  background: #16a34a;
 
   color: #ffffff;
+
+  border: 1px solid #16a34a;
 }
 
-.primary-btn:hover {
-  background: #43a047;
+.history-page .primary-btn:hover {
+  background: #15803d;
 
-  transform: translateY(-1px);
+  border-color: #15803d;
+
+  transform: translateY(-2px);
+
+  box-shadow: 0 6px 14px rgba(22, 163, 74, 0.2);
 }
 
-/* SECONDARY */
+/* ================= SECONDARY ================= */
 
-.secondary-btn {
-  background: #f5f7f9;
+.history-page .secondary-btn {
+  background: #f8fafc;
 
-  color: #526581;
+  color: #475569;
 
-  border: 1px solid #dce2e8;
+  border: 1px solid #cbd5e1;
 }
 
-.secondary-btn:hover {
-  background: #e9edf1;
+.history-page .secondary-btn:hover {
+  background: #f1f5f9;
+
+  border-color: #94a3b8;
+
+  transform: translateY(-2px);
 }
 
 /* ======================================================
@@ -517,47 +485,21 @@
    ====================================================== */
 
 .history-card {
-  background: #ffffff;
+  padding: 28px;
 
-  border: 1px solid #e5eaf0;
-
-  border-radius: 14px;
-
-  padding: 27px;
-
-  box-shadow: 0 5px 18px rgba(0, 0, 0, 0.05);
+  margin-bottom: 25px;
 }
 
-/* ======================================================
-   HISTORY HEADER
-   ====================================================== */
+/* ================= HISTORY HEADER ================= */
 
 .history-card-header {
   display: flex;
-
-  align-items: center;
-
+  align-items: flex-start;
   justify-content: space-between;
 
   gap: 20px;
 
   margin-bottom: 24px;
-}
-
-.history-card-header h2 {
-  margin: 0 0 5px;
-
-  color: #182b49;
-
-  font-size: 22px;
-}
-
-.history-card-header p {
-  margin: 0;
-
-  color: #718096;
-
-  font-size: 13px;
 }
 
 /* ======================================================
@@ -568,6 +510,9 @@
   width: 100%;
 
   overflow-x: auto;
+
+  border: 1px solid #e2e8f0;
+  border-radius: 12px;
 }
 
 table {
@@ -579,21 +524,20 @@ table {
 }
 
 thead {
-  background: #f6f8fa;
+  background: #f8fafc;
 }
 
 th {
-  padding: 14px 15px;
+  padding: 15px;
 
-  color: #526581;
+  color: #475569;
 
   font-size: 12px;
-
-  font-weight: 700;
+  font-weight: 800;
 
   text-align: left;
 
-  border-bottom: 1px solid #e3e7eb;
+  border-bottom: 1px solid #e2e8f0;
 
   white-space: nowrap;
 }
@@ -601,17 +545,17 @@ th {
 td {
   padding: 16px 15px;
 
-  color: #334155;
+  color: #475569;
 
   font-size: 14px;
 
-  border-bottom: 1px solid #edf0f3;
+  border-bottom: 1px solid #f1f5f9;
 
   vertical-align: middle;
 }
 
 td strong {
-  color: #182b49;
+  color: #0f172a;
 }
 
 tbody tr {
@@ -619,7 +563,7 @@ tbody tr {
 }
 
 tbody tr:hover {
-  background: #fafcfb;
+  background: #f8fffa;
 }
 
 tbody tr:last-child td {
@@ -632,76 +576,68 @@ tbody tr:last-child td {
 
 .status-badge {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   padding: 6px 11px;
 
-  border-radius: 20px;
+  border-radius: 50px;
 
   font-size: 11px;
-
-  font-weight: 700;
+  font-weight: 800;
 
   white-space: nowrap;
 }
 
 .status-good {
-  background: #eaf7ee;
-
-  color: #16803c;
-}
-
-.status-over {
-  background: #fff0f0;
-
-  color: #d12f2f;
+  background: #dcfce7;
+  color: #15803d;
 }
 
 .status-under {
-  background: #eef5ff;
+  background: #dbeafe;
+  color: #1d4ed8;
+}
 
-  color: #2764b5;
+.status-over {
+  background: #fee2e2;
+  color: #dc2626;
 }
 
 /* ======================================================
-   VIEW DAY
+   VIEW DAY BUTTON
    ====================================================== */
 
 .view-day-btn {
   display: inline-flex;
-
   align-items: center;
-
   justify-content: center;
 
   min-height: 34px;
 
   padding: 0 13px;
 
-  border: 1px solid #4caf50;
-
-  border-radius: 7px;
-
   background: #ffffff;
 
-  color: #4caf50;
+  color: #16a34a;
+
+  border: 1px solid #16a34a;
+  border-radius: 8px;
 
   font-family: inherit;
-
   font-size: 12px;
-
-  font-weight: 600;
+  font-weight: 700;
 
   cursor: pointer;
 
-  transition: all 0.2s ease;
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    transform 0.2s ease;
 }
 
 .view-day-btn:hover {
-  background: #4caf50;
+  background: #16a34a;
 
   color: #ffffff;
 
@@ -718,7 +654,6 @@ tbody tr:last-child td {
   flex-direction: column;
 
   align-items: center;
-
   justify-content: center;
 
   padding: 65px 20px;
@@ -727,19 +662,18 @@ tbody tr:last-child td {
 }
 
 .empty-icon {
+  width: 72px;
+  height: 72px;
+
   display: flex;
-
   align-items: center;
-
   justify-content: center;
-
-  width: 70px;
-
-  height: 70px;
 
   margin-bottom: 18px;
 
-  background: #f1f8f3;
+  background: #f0fdf4;
+
+  border: 1px solid #dcfce7;
 
   border-radius: 50%;
 
@@ -749,21 +683,21 @@ tbody tr:last-child td {
 .empty-history h3 {
   margin: 0 0 8px;
 
-  color: #182b49;
+  color: #0f172a;
 
   font-size: 20px;
 }
 
 .empty-history p {
-  max-width: 430px;
+  max-width: 450px;
 
   margin: 0 0 22px;
 
-  color: #718096;
+  color: #64748b;
 
   font-size: 14px;
 
-  line-height: 1.6;
+  line-height: 1.7;
 }
 
 /* ======================================================
@@ -771,21 +705,19 @@ tbody tr:last-child td {
    ====================================================== */
 
 .status-guide {
-  margin-top: 25px;
-
-  padding: 23px 25px;
+  padding: 24px 25px;
 
   background: #f8fafc;
 
-  border: 1px solid #e8edf2;
+  border: 1px solid #e2e8f0;
 
-  border-radius: 14px;
+  border-radius: 16px;
 }
 
 .status-guide h3 {
   margin: 0 0 18px;
 
-  color: #182b49;
+  color: #0f172a;
 
   font-size: 16px;
 }
@@ -800,7 +732,6 @@ tbody tr:last-child td {
 
 .status-guide-items > div {
   display: flex;
-
   flex-direction: column;
 
   gap: 8px;
@@ -809,15 +740,15 @@ tbody tr:last-child td {
 .status-guide-items p {
   margin: 0;
 
-  color: #718096;
+  color: #64748b;
 
   font-size: 12px;
 
-  line-height: 1.5;
+  line-height: 1.6;
 }
 
 /* ======================================================
-   RESPONSIVE - TABLET
+   TABLET
    ====================================================== */
 
 @media (max-width: 1050px) {
@@ -827,7 +758,6 @@ tbody tr:last-child td {
 
   .history-filter {
     flex-direction: column;
-
     align-items: stretch;
   }
 
@@ -837,20 +767,22 @@ tbody tr:last-child td {
 
   .chart-header {
     flex-direction: column;
-
-    align-items: flex-start;
   }
 }
 
 /* ======================================================
-   RESPONSIVE - MOBILE
+   MOBILE
    ====================================================== */
 
 @media (max-width: 650px) {
   .history-page {
     width: 92%;
 
-    padding: 30px 0 50px;
+    padding: 35px 0 55px;
+  }
+
+  .page-header {
+    margin-bottom: 25px;
   }
 
   .page-header h1 {
@@ -859,8 +791,6 @@ tbody tr:last-child td {
 
   .page-header p {
     font-size: 14px;
-
-    line-height: 1.6;
   }
 
   /* SUMMARY */
@@ -871,10 +801,16 @@ tbody tr:last-child td {
     gap: 12px;
   }
 
+  .history-summary-card {
+    min-height: 95px;
+
+    padding: 18px;
+  }
+
   /* CHART */
 
   .chart-card {
-    padding: 18px;
+    padding: 20px;
   }
 
   .chart-wrapper {
@@ -894,8 +830,9 @@ tbody tr:last-child td {
   }
 
   .filter-controls {
-    flex-direction: column;
+    width: 100%;
 
+    flex-direction: column;
     align-items: stretch;
   }
 
@@ -907,19 +844,18 @@ tbody tr:last-child td {
     width: 100%;
   }
 
-  .filter-controls .btn {
+  .history-page .filter-controls .btn {
     width: 100%;
   }
 
   /* HISTORY */
 
   .history-card {
-    padding: 18px;
+    padding: 20px;
   }
 
   .history-card-header {
     flex-direction: column;
-
     align-items: flex-start;
   }
 
@@ -929,9 +865,43 @@ tbody tr:last-child td {
 
   /* STATUS GUIDE */
 
+  .status-guide {
+    padding: 20px;
+  }
+
   .status-guide-items {
     grid-template-columns: 1fr;
 
     gap: 15px;
+  }
+}
+
+/* ======================================================
+   SMALL MOBILE
+   ====================================================== */
+
+@media (max-width: 400px) {
+  .history-page {
+    width: 94%;
+  }
+
+  .history-summary-card {
+    gap: 12px;
+  }
+
+  .summary-icon {
+    width: 46px;
+    height: 46px;
+
+    font-size: 20px;
+  }
+
+  .summary-content strong {
+    font-size: 18px;
+  }
+
+  .chart-card,
+  .history-card {
+    padding: 16px;
   }
 }

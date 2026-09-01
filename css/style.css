@@ -1,3 +1,9 @@
+/* ======================================================
+   CALORIETRACK - GLOBAL STYLES
+   ====================================================== */
+
+/* ================= RESET ================= */
+
 * {
   margin: 0;
   padding: 0;
@@ -11,133 +17,475 @@ html {
 body {
   font-family: Arial, Helvetica, sans-serif;
   line-height: 1.6;
-  background-color: #f8fafc;
+
+  background: #f7f9fc;
+
   color: #1e293b;
+
+  min-height: 100vh;
+
+  -webkit-font-smoothing: antialiased;
 }
 
-/* ================= NAVBAR ================= */
+/* ======================================================
+   COMMON CONTAINER
+   ====================================================== */
+
+.container {
+  width: 90%;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+/* ======================================================
+   NAVBAR
+   ====================================================== */
 
 .navbar {
   width: 100%;
-  min-height: 70px;
-  padding: 0 8%;
+
+  min-height: 74px;
+
+  padding: 0 6%;
+
   display: flex;
+
   align-items: center;
+
   justify-content: space-between;
 
-  background-color: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
+  gap: 30px;
+
+  background: rgba(255, 255, 255, 0.96);
+
+  border-bottom: 1px solid #e6ebf1;
 
   position: sticky;
+
   top: 0;
+
   z-index: 1000;
+
+
+  box-shadow: 0 2px 12px rgba(15, 23, 42, 0.04);
 }
 
+/* ======================================================
+   LOGO
+   ====================================================== */
+
 .logo {
-  font-size: 1.5rem;
+  display: flex;
+
+  align-items: center;
+
+  gap: 8px;
+
+  flex-shrink: 0;
+
+  color: #182b49;
+
+  font-size: 1.55rem;
+
   font-weight: 700;
+
+  letter-spacing: -0.4px;
 }
+
+/* ======================================================
+   NAVIGATION
+   ====================================================== */
 
 .navbar nav {
   display: flex;
+
   align-items: center;
-  gap: 30px;
+
+  justify-content: flex-end;
+
+  gap: 8px;
 }
 
 .navbar nav a {
+  position: relative;
+
+  padding: 9px 12px;
+
   text-decoration: none;
-  color: #475569;
-  font-size: 0.95rem;
+
+  color: #526581;
+
+  font-size: 0.94rem;
+
   font-weight: 500;
 
-  transition: 0.3s;
+  border-radius: 7px;
+
+  transition:
+    color 0.2s ease,
+    background 0.2s ease;
 }
 
-.navbar nav a:hover,
+/* Hover */
+
+.navbar nav a:hover {
+  color: #16803c;
+
+  background: #f1f8f3;
+}
+
+/* Active */
+
 .navbar nav a.active {
-  color: #16a34a;
+  color: #16803c;
+
+  background: #eef8f1;
+
+  font-weight: 600;
 }
 
-/* ================= BUTTONS ================= */
+/* ======================================================
+   BUTTON BASE
+   ====================================================== */
 
 .btn {
-  display: inline-block;
-  padding: 12px 24px;
+  display: inline-flex;
 
-  border-radius: 8px;
+  align-items: center;
+
+  justify-content: center;
+
+  min-height: 44px;
+
+  padding: 0 20px;
+
+  border-radius: 9px;
+
+  border: none;
 
   text-decoration: none;
-  font-size: 0.95rem;
+
+  font-family: inherit;
+
+  font-size: 0.94rem;
+
   font-weight: 600;
 
-  transition: 0.3s;
+  cursor: pointer;
+
+  transition:
+    background 0.2s ease,
+    color 0.2s ease,
+    border-color 0.2s ease,
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+
+  box-sizing: border-box;
 }
 
+/* ======================================================
+   PRIMARY BUTTON
+   ====================================================== */
+
 .primary-btn {
-  background-color: #16a34a;
+  background: #16a34a;
+
   color: #ffffff;
+
+  box-shadow: 0 4px 12px rgba(22, 163, 74, 0.16);
 }
 
 .primary-btn:hover {
-  background-color: #15803d;
+  background: #15803d;
+
+  color: #ffffff;
+
+  transform: translateY(-1px);
+
+  box-shadow: 0 6px 16px rgba(22, 163, 74, 0.22);
 }
 
-.secondary-btn {
-  background-color: #ffffff;
-  color: #16a34a;
+.primary-btn:active {
+  transform: translateY(0);
+}
 
-  border: 1px solid #16a34a;
+/* ======================================================
+   SECONDARY BUTTON
+   ====================================================== */
+
+.secondary-btn {
+  background: #ffffff;
+
+  color: #16803c;
+
+  border: 1px solid #b9dec4;
 }
 
 .secondary-btn:hover {
-  background-color: #f0fdf4;
+  background: #f1f8f3;
+
+  color: #15803d;
+
+  border-color: #8fc9a0;
+
+  transform: translateY(-1px);
 }
 
-/* ================= SECTION HEADING ================= */
+/* ======================================================
+   BUTTON FOCUS
+   ====================================================== */
+
+.btn:focus-visible,
+.navbar nav a:focus-visible {
+  outline: 3px solid rgba(22, 163, 74, 0.18);
+
+  outline-offset: 2px;
+}
+
+/* ======================================================
+   SECTION HEADING
+   ====================================================== */
 
 .section-heading {
+  max-width: 680px;
+
+  margin: 0 auto 45px;
+
   text-align: center;
-  max-width: 650px;
-  margin: 0 auto 50px;
 }
 
 .section-heading h2 {
+  margin-bottom: 10px;
+
+  color: #182b49;
+
   font-size: 2rem;
-  margin-bottom: 12px;
+
+  line-height: 1.25;
+
+  font-weight: 700;
+
+  letter-spacing: -0.4px;
 }
 
 .section-heading p {
   color: #64748b;
+
+  font-size: 0.98rem;
+
+  line-height: 1.7;
 }
 
-/* ================= FOOTER ================= */
+/* ======================================================
+   COMMON CARD
+   ====================================================== */
+
+.card {
+  background: #ffffff;
+
+  border: 1px solid #e5eaf0;
+
+  border-radius: 14px;
+
+  box-shadow: 0 5px 20px rgba(15, 23, 42, 0.05);
+
+  transition:
+    transform 0.2s ease,
+    box-shadow 0.2s ease;
+}
+
+.card:hover {
+  transform: translateY(-2px);
+
+  box-shadow: 0 9px 26px rgba(15, 23, 42, 0.08);
+}
+
+/* ======================================================
+   COMMON INPUT
+   ====================================================== */
+
+input,
+select,
+textarea {
+  font-family: inherit;
+}
+
+input:focus,
+select:focus,
+textarea:focus {
+  outline: none;
+
+  border-color: #16a34a;
+
+  box-shadow: 0 0 0 3px rgba(22, 163, 74, 0.1);
+}
+
+/* ======================================================
+   LINKS
+   ====================================================== */
+
+a {
+  color: inherit;
+}
+
+/* ======================================================
+   FOOTER
+   ====================================================== */
 
 footer {
-  padding: 25px 8%;
+  margin-top: 40px;
+
+  padding: 28px 6%;
+
   text-align: center;
 
-  background-color: #0f172a;
+  background: #172033;
+
   color: #cbd5e1;
 
-  font-size: 0.9rem;
+  border-top: 1px solid #263249;
+
+  font-size: 0.88rem;
 }
 
-/* ================= RESPONSIVE ================= */
+footer p {
+  margin: 0;
 
-@media (max-width: 768px) {
+  line-height: 1.6;
+}
+
+/* ======================================================
+   SCROLLBAR
+   ====================================================== */
+
+::-webkit-scrollbar {
+  width: 8px;
+
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: #f1f5f9;
+}
+
+::-webkit-scrollbar-thumb {
+  background: #cbd5e1;
+
+  border-radius: 20px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: #94a3b8;
+}
+
+/* ======================================================
+   SELECTION
+   ====================================================== */
+
+::selection {
+  background: #dff4e5;
+
+  color: #14532d;
+}
+
+/* ======================================================
+   RESPONSIVE - TABLET
+   ====================================================== */
+
+@media (max-width: 1000px) {
   .navbar {
-    padding: 15px 5%;
-    flex-direction: column;
-    gap: 15px;
+    padding: 0 4%;
   }
 
   .navbar nav {
-    gap: 15px;
-    flex-wrap: wrap;
-    justify-content: center;
+    gap: 3px;
   }
 
   .navbar nav a {
-    font-size: 0.85rem;
+    padding: 8px 9px;
+
+    font-size: 0.88rem;
+  }
+}
+
+/* ======================================================
+   RESPONSIVE - MOBILE
+   ====================================================== */
+
+@media (max-width: 768px) {
+  .navbar {
+    min-height: auto;
+
+    padding: 15px 5%;
+
+    flex-direction: column;
+
+    gap: 12px;
+  }
+
+  .logo {
+    font-size: 1.45rem;
+  }
+
+  .navbar nav {
+    width: 100%;
+
+    justify-content: center;
+
+    flex-wrap: wrap;
+
+    gap: 5px;
+  }
+
+  .navbar nav a {
+    padding: 7px 9px;
+
+    font-size: 0.84rem;
+  }
+
+  .section-heading {
+    margin-bottom: 32px;
+  }
+
+  .section-heading h2 {
+    font-size: 1.7rem;
+  }
+
+  .section-heading p {
+    font-size: 0.92rem;
+  }
+
+  .btn {
+    min-height: 43px;
+
+    padding: 0 17px;
+
+    font-size: 0.9rem;
+  }
+
+  footer {
+    padding: 24px 5%;
+
+    font-size: 0.82rem;
+  }
+}
+
+/* ======================================================
+   RESPONSIVE - SMALL MOBILE
+   ====================================================== */
+
+@media (max-width: 480px) {
+  .navbar nav {
+    gap: 3px;
+  }
+
+  .navbar nav a {
+    padding: 6px 7px;
+
+    font-size: 0.78rem;
+  }
+
+  .logo {
+    font-size: 1.35rem;
   }
 }

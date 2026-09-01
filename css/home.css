@@ -1,205 +1,723 @@
+/* ======================================================
+   CALORIETRACK - HOME PAGE
+   ====================================================== */
+
+
+/* ======================================================
+   MAIN
+   ====================================================== */
+
 main {
-  overflow: hidden;
+    overflow: hidden;
 }
 
-/* ================= HERO ================= */
+
+/* ======================================================
+   HERO SECTION
+   ====================================================== */
 
 .hero {
-  min-height: 600px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    min-height: 620px;
 
-  padding: 80px 8%;
+    display: flex;
 
-  text-align: center;
+    align-items: center;
 
-  background: linear-gradient(135deg, #f0fdf4, #ffffff);
+    justify-content: center;
+
+    padding: 90px 8%;
+
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at top left,
+            rgba(76, 175, 80, 0.12),
+            transparent 35%
+        ),
+        radial-gradient(
+            circle at bottom right,
+            rgba(22, 163, 74, 0.08),
+            transparent 35%
+        ),
+        linear-gradient(
+            135deg,
+            #f0fdf4 0%,
+            #ffffff 55%,
+            #f8fafc 100%
+        );
+
+    position: relative;
+
 }
+
+
+/* Decorative background circle */
+
+.hero::before {
+
+    content: "";
+
+    position: absolute;
+
+    width: 280px;
+
+    height: 280px;
+
+    border-radius: 50%;
+
+    background: rgba(76, 175, 80, 0.06);
+
+    top: -120px;
+
+    right: -80px;
+
+}
+
+
+/* HERO CONTENT */
 
 .hero-content {
-  max-width: 800px;
+
+    max-width: 850px;
+
+    position: relative;
+
+    z-index: 1;
+
 }
+
+
+/* SMALL BADGE */
+
+.hero-content::before {
+
+    content: "🍎  Smart Food & Calorie Tracking";
+
+    display: inline-block;
+
+    margin-bottom: 22px;
+
+    padding: 8px 15px;
+
+    border-radius: 30px;
+
+    background: #eaf7ee;
+
+    border: 1px solid #d5eedb;
+
+    color: #16803c;
+
+    font-size: 13px;
+
+    font-weight: 600;
+
+}
+
+
+/* HERO TITLE */
 
 .hero h1 {
-  font-size: 4rem;
-  line-height: 1.1;
-  margin-bottom: 25px;
+
+    margin: 0 0 22px;
+
+    color: #182b49;
+
+    font-size: clamp(2.8rem, 6vw, 4.4rem);
+
+    line-height: 1.08;
+
+    font-weight: 800;
+
+    letter-spacing: -1.5px;
+
 }
+
+
+/* GREEN TITLE */
 
 .hero h1 span {
-  color: #16a34a;
+
+    color: #16a34a;
+
 }
+
+
+/* HERO DESCRIPTION */
 
 .hero p {
-  max-width: 650px;
-  margin: 0 auto 35px;
 
-  font-size: 1.1rem;
-  color: #64748b;
+    max-width: 680px;
+
+    margin: 0 auto 35px;
+
+    color: #64748b;
+
+    font-size: 1.1rem;
+
+    line-height: 1.8;
+
 }
+
+
+/* ======================================================
+   HERO BUTTONS
+   ====================================================== */
 
 .hero-buttons {
-  display: flex;
-  justify-content: center;
-  gap: 15px;
-  flex-wrap: wrap;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    gap: 14px;
+
+    flex-wrap: wrap;
+
 }
 
-/* ================= FEATURES ================= */
+
+/* Hero button sizing */
+
+.hero-buttons .btn {
+
+    min-width: 155px;
+
+    text-align: center;
+
+}
+
+
+/* ======================================================
+   FEATURES SECTION
+   ====================================================== */
 
 .features {
-  padding: 90px 8%;
-  background-color: #ffffff;
+
+    padding: 95px 8%;
+
+    background: #ffffff;
+
 }
+
+
+/* FEATURE CONTAINER */
 
 .feature-container {
-  max-width: 1100px;
-  margin: auto;
 
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: 25px;
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(3, 1fr);
+
+    gap: 22px;
+
 }
+
+
+/* ======================================================
+   FEATURE CARD
+   ====================================================== */
 
 .feature-card {
-  padding: 35px 25px;
 
-  text-align: center;
+    position: relative;
 
-  border: 1px solid #e2e8f0;
-  border-radius: 12px;
+    padding: 32px 26px;
 
-  background-color: #ffffff;
+    text-align: center;
 
-  transition: 0.3s;
+    background: #ffffff;
+
+    border: 1px solid #e5eaf0;
+
+    border-radius: 16px;
+
+    box-shadow:
+        0 5px 18px rgba(15, 23, 42, 0.05);
+
+    transition:
+        transform 0.25s ease,
+        box-shadow 0.25s ease,
+        border-color 0.25s ease;
+
 }
+
+
+/* TOP ACCENT */
+
+.feature-card::before {
+
+    content: "";
+
+    position: absolute;
+
+    top: 0;
+
+    left: 25%;
+
+    width: 50%;
+
+    height: 3px;
+
+    border-radius: 0 0 10px 10px;
+
+    background: #4caf50;
+
+    opacity: 0;
+
+    transition: opacity 0.25s ease;
+
+}
+
+
+/* HOVER */
 
 .feature-card:hover {
-  transform: translateY(-6px);
-  box-shadow: 0 10px 25px rgba(0, 0, 0, 0.08);
+
+    transform: translateY(-7px);
+
+    border-color: #d5ead9;
+
+    box-shadow:
+        0 14px 30px rgba(15, 23, 42, 0.09);
+
 }
+
+
+.feature-card:hover::before {
+
+    opacity: 1;
+
+}
+
+
+/* ======================================================
+   FEATURE ICON
+   ====================================================== */
 
 .feature-icon {
-  font-size: 2.5rem;
-  margin-bottom: 15px;
+
+    width: 58px;
+
+    height: 58px;
+
+    margin: 0 auto 18px;
+
+    display: flex;
+
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 14px;
+
+    background: #f0f8f2;
+
+    font-size: 28px;
+
 }
+
+
+/* FEATURE TITLE */
 
 .feature-card h3 {
-  margin-bottom: 10px;
+
+    margin: 0 0 10px;
+
+    color: #182b49;
+
+    font-size: 18px;
+
+    font-weight: 700;
+
 }
+
+
+/* FEATURE DESCRIPTION */
 
 .feature-card p {
-  color: #64748b;
-  font-size: 0.95rem;
+
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 14px;
+
+    line-height: 1.7;
+
 }
 
-/* ================= HOW IT WORKS ================= */
+
+/* ======================================================
+   HOW IT WORKS
+   ====================================================== */
 
 .how-it-works {
-  padding: 90px 8%;
-  background-color: #f8fafc;
+
+    padding: 95px 8%;
+
+    background:
+        linear-gradient(
+            180deg,
+            #f8fafc 0%,
+            #f4f8f5 100%
+        );
+
 }
+
+
+/* STEPS CONTAINER */
 
 .steps-container {
-  max-width: 1100px;
-  margin: auto;
 
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 25px;
+    width: 100%;
+
+    max-width: 1120px;
+
+    margin: 0 auto;
+
+    display: grid;
+
+    grid-template-columns: repeat(4, 1fr);
+
+    gap: 25px;
+
 }
+
+
+/* ======================================================
+   STEP
+   ====================================================== */
 
 .step {
-  text-align: center;
+
+    position: relative;
+
+    padding: 10px 12px;
+
+    text-align: center;
+
 }
+
+
+/* ======================================================
+   STEP NUMBER
+   ====================================================== */
 
 .step-number {
-  width: 50px;
-  height: 50px;
 
-  margin: 0 auto 20px;
+    width: 55px;
 
-  display: flex;
-  align-items: center;
-  justify-content: center;
+    height: 55px;
 
-  border-radius: 50%;
+    margin: 0 auto 18px;
 
-  background-color: #16a34a;
-  color: #ffffff;
+    display: flex;
 
-  font-weight: 700;
-  font-size: 1.1rem;
+    align-items: center;
+
+    justify-content: center;
+
+    border-radius: 50%;
+
+    background: #16a34a;
+
+    color: #ffffff;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
+    box-shadow:
+        0 6px 16px rgba(22, 163, 74, 0.22);
+
 }
+
+
+/* STEP TITLE */
 
 .step h3 {
-  margin-bottom: 8px;
+
+    margin: 0 0 8px;
+
+    color: #182b49;
+
+    font-size: 17px;
+
+    font-weight: 700;
+
 }
+
+
+/* STEP DESCRIPTION */
 
 .step p {
-  color: #64748b;
-  font-size: 0.9rem;
+
+    margin: 0;
+
+    color: #718096;
+
+    font-size: 13px;
+
+    line-height: 1.7;
+
 }
 
-/* ================= CTA ================= */
+
+/* ======================================================
+   CTA SECTION
+   ====================================================== */
 
 .cta {
-  padding: 80px 8%;
 
-  text-align: center;
+    padding: 85px 8%;
 
-  background-color: #f0fdf4;
+    text-align: center;
+
+    background:
+        radial-gradient(
+            circle at center,
+            rgba(76, 175, 80, 0.12),
+            transparent 55%
+        ),
+        #f0fdf4;
+
+    border-top: 1px solid #e1f0e4;
+
 }
+
+
+/* CTA TITLE */
 
 .cta h2 {
-  font-size: 2rem;
-  margin-bottom: 12px;
+
+    margin: 0 0 12px;
+
+    color: #182b49;
+
+    font-size: 32px;
+
+    font-weight: 750;
+
 }
+
+
+/* CTA DESCRIPTION */
 
 .cta p {
-  color: #64748b;
-  margin-bottom: 25px;
+
+    max-width: 600px;
+
+    margin: 0 auto 25px;
+
+    color: #64748b;
+
+    font-size: 15px;
+
+    line-height: 1.7;
+
 }
 
-/* ================= RESPONSIVE ================= */
 
-@media (max-width: 900px) {
-  .feature-container {
-    grid-template-columns: 1fr;
-    max-width: 500px;
-  }
+/* ======================================================
+   RESPONSIVE - TABLET
+   ====================================================== */
 
-  .steps-container {
-    grid-template-columns: repeat(2, 1fr);
-  }
+@media (max-width: 1000px) {
 
-  .hero h1 {
-    font-size: 3rem;
-  }
+    .hero {
+
+        min-height: 560px;
+
+        padding: 75px 6%;
+
+    }
+
+
+    .feature-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 750px;
+
+    }
+
+
+    .steps-container {
+
+        grid-template-columns: repeat(2, 1fr);
+
+        max-width: 750px;
+
+        row-gap: 40px;
+
+    }
+
 }
 
-@media (max-width: 600px) {
-  .steps-container {
-    grid-template-columns: 1fr;
-  }
 
-  .hero {
-    min-height: 500px;
-    padding: 60px 5%;
-  }
+/* ======================================================
+   RESPONSIVE - MOBILE
+   ====================================================== */
 
-  .hero h1 {
-    font-size: 2.5rem;
-  }
+@media (max-width: 650px) {
 
-  .hero p {
-    font-size: 1rem;
-  }
+    .hero {
 
-  .features,
-  .how-it-works {
-    padding: 60px 5%;
-  }
+        min-height: 540px;
+
+        padding: 65px 5%;
+
+    }
+
+
+    .hero-content::before {
+
+        font-size: 11px;
+
+        padding: 7px 12px;
+
+    }
+
+
+    .hero h1 {
+
+        font-size: 2.7rem;
+
+        letter-spacing: -0.8px;
+
+    }
+
+
+    .hero p {
+
+        font-size: 15px;
+
+        line-height: 1.7;
+
+        margin-bottom: 28px;
+
+    }
+
+
+    .hero-buttons {
+
+        flex-direction: column;
+
+        width: 100%;
+
+    }
+
+
+    .hero-buttons .btn {
+
+        width: 100%;
+
+        max-width: 280px;
+
+    }
+
+
+    /* FEATURES */
+
+    .features {
+
+        padding: 65px 5%;
+
+    }
+
+
+    .feature-container {
+
+        grid-template-columns: 1fr;
+
+        max-width: 480px;
+
+        gap: 16px;
+
+    }
+
+
+    .feature-card {
+
+        padding: 28px 22px;
+
+    }
+
+
+    /* HOW IT WORKS */
+
+    .how-it-works {
+
+        padding: 65px 5%;
+
+    }
+
+
+    .steps-container {
+
+        grid-template-columns: 1fr;
+
+        max-width: 480px;
+
+        gap: 30px;
+
+    }
+
+
+    /* CTA */
+
+    .cta {
+
+        padding: 65px 5%;
+
+    }
+
+
+    .cta h2 {
+
+        font-size: 27px;
+
+    }
+
+
+    .cta p {
+
+        font-size: 14px;
+
+    }
+
+}
+
+
+/* ======================================================
+   VERY SMALL DEVICES
+   ====================================================== */
+
+@media (max-width: 400px) {
+
+    .hero h1 {
+
+        font-size: 2.35rem;
+
+    }
+
+
+    .hero {
+
+        padding-left: 4%;
+
+        padding-right: 4%;
+
+    }
+
 }

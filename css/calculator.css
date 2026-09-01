@@ -13,7 +13,7 @@
 
     margin: 0 auto;
 
-    padding: 45px 0 60px;
+    padding: 50px 0 70px;
 }
 
 
@@ -24,7 +24,7 @@
 .calculator-page .page-header {
     max-width: 850px;
 
-    margin: 0 auto 35px;
+    margin: 0 auto 38px;
 
     text-align: center;
 }
@@ -34,7 +34,7 @@
 
     color: #182b49;
 
-    font-size: 36px;
+    font-size: 38px;
 
     font-weight: 700;
 }
@@ -42,11 +42,11 @@
 .calculator-page .page-header p {
     margin: 0;
 
-    color: #607089;
+    color: #64748b;
 
     font-size: 16px;
 
-    line-height: 1.6;
+    line-height: 1.7;
 }
 
 
@@ -75,19 +75,32 @@
 .result-card {
     background: #ffffff;
 
-    border: 1px solid #e1e7ed;
+    border: 1px solid #e2e8f0;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
     padding: 30px;
 
-    box-shadow: 0 6px 20px rgba(0, 0, 0, 0.06);
+    box-shadow:
+        0 4px 15px rgba(15, 23, 42, 0.05);
 
     box-sizing: border-box;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.calculator-card:hover,
+.result-card:hover {
+    box-shadow:
+        0 8px 25px rgba(15, 23, 42, 0.08);
 }
 
 
-/* CARD HEADINGS */
+/* ======================================================
+   CARD HEADINGS
+   ====================================================== */
 
 .calculator-card h2,
 .result-card h2 {
@@ -134,9 +147,9 @@
 
     padding: 0 13px;
 
-    border: 1px solid #cfd8e3;
+    border: 1px solid #cbd5e1;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     background: #ffffff;
 
@@ -150,24 +163,31 @@
 
     box-sizing: border-box;
 
-    transition: 0.2s ease;
+    transition:
+        border-color 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
-
-/* FOCUS */
+.form-group select:hover,
+.form-group input:hover {
+    border-color: #94a3b8;
+}
 
 .form-group select:focus,
 .form-group input:focus {
-    border-color: #4caf50;
+    border-color: #16a34a;
 
-    box-shadow: 0 0 0 3px rgba(76, 175, 80, 0.10);
+    box-shadow:
+        0 0 0 3px rgba(22, 163, 74, 0.10);
 }
 
 
-/* PLACEHOLDER */
+/* ======================================================
+   PLACEHOLDER
+   ====================================================== */
 
 .form-group input::placeholder {
-    color: #9aa6b2;
+    color: #94a3b8;
 }
 
 
@@ -184,7 +204,9 @@
 }
 
 
-/* METHOD BUTTON */
+/* ======================================================
+   METHOD BUTTON
+   ====================================================== */
 
 .method-btn {
     min-height: 45px;
@@ -193,9 +215,9 @@
 
     border: 1px solid #d5dde6;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    background: #f8fafb;
+    background: #f8fafc;
 
     color: #526581;
 
@@ -207,27 +229,26 @@
 
     cursor: pointer;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        border-color 0.2s ease,
+        transform 0.2s ease;
 }
-
-
-/* HOVER */
 
 .method-btn:hover {
-    border-color: #4caf50;
+    border-color: #16a34a;
 
-    background: #f4fbf5;
+    background: #f0fdf4;
+
+    transform: translateY(-1px);
 }
 
-
-/* ACTIVE */
-
 .method-btn.active {
-    border-color: #4caf50;
+    border-color: #16a34a;
 
-    background: #eaf7ed;
+    background: #dcfce7;
 
-    color: #16803c;
+    color: #15803d;
 }
 
 
@@ -257,11 +278,11 @@
 
     height: 46px;
 
-    border: 1px solid #cfd8e3;
+    border: 1px solid #cbd5e1;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
-    background: #f8fafb;
+    background: #f8fafc;
 
     color: #526581;
 
@@ -280,7 +301,7 @@
 .optional {
     margin-left: 5px;
 
-    color: #8a96a3;
+    color: #94a3b8;
 
     font-size: 11px;
 
@@ -305,7 +326,7 @@
 
     border: none;
 
-    border-radius: 8px;
+    border-radius: 9px;
 
     font-family: inherit;
 
@@ -319,37 +340,49 @@
 
     box-sizing: border-box;
 
-    transition: 0.2s ease;
+    transition:
+        background 0.2s ease,
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
 }
 
 
-/* PRIMARY */
+/* ======================================================
+   PRIMARY BUTTON
+   ====================================================== */
 
 .primary-btn {
-    background: #4caf50;
+    background: #16a34a;
 
     color: #ffffff;
 }
 
 .primary-btn:hover {
-    background: #43a047;
+    background: #15803d;
 
     transform: translateY(-1px);
+
+    box-shadow:
+        0 5px 14px rgba(22, 163, 74, 0.20);
 }
 
 
-/* SECONDARY */
+/* ======================================================
+   SECONDARY BUTTON
+   ====================================================== */
 
 .secondary-btn {
     background: #ffffff;
 
-    color: #4caf50;
+    color: #16a34a;
 
-    border: 1px solid #4caf50;
+    border: 1px solid #16a34a;
 }
 
 .secondary-btn:hover {
-    background: #eaf7ed;
+    background: #f0fdf4;
+
+    transform: translateY(-1px);
 }
 
 
@@ -440,15 +473,20 @@
 .result-calories {
     margin: 22px 0;
 
-    padding: 27px 20px;
+    padding: 28px 20px;
 
     text-align: center;
 
-    background: #effaf2;
+    background:
+        linear-gradient(
+            135deg,
+            #f0fdf4,
+            #ecfdf5
+        );
 
-    border: 1px solid #d8f0dd;
+    border: 1px solid #d1fae5;
 
-    border-radius: 12px;
+    border-radius: 13px;
 }
 
 .result-calories span {
@@ -456,7 +494,7 @@
 
     margin-bottom: 7px;
 
-    color: #6b7c8f;
+    color: #64748b;
 
     font-size: 14px;
 }
@@ -466,7 +504,7 @@
 
     color: #16a34a;
 
-    font-size: 32px;
+    font-size: 34px;
 
     font-weight: 700;
 }
@@ -487,7 +525,9 @@
 }
 
 
-/* NUTRITION ITEM */
+/* ======================================================
+   NUTRITION ITEM
+   ====================================================== */
 
 .result-item {
     min-height: 75px;
@@ -502,15 +542,26 @@
 
     justify-content: center;
 
-    background: #f7f9fb;
+    background: #f8fafc;
 
     border: 1px solid #edf0f3;
 
-    border-radius: 9px;
+    border-radius: 10px;
 
     text-align: center;
 
     box-sizing: border-box;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.result-item:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 4px 12px rgba(15, 23, 42, 0.05);
 }
 
 .result-item span {
@@ -548,6 +599,8 @@
     cursor: not-allowed;
 
     transform: none;
+
+    box-shadow: none;
 }
 
 
@@ -562,17 +615,19 @@
 
     padding: 30px;
 
-    background: #f7f9fb;
+    background: #f8fafc;
 
     border: 1px solid #e5eaf0;
 
-    border-radius: 15px;
+    border-radius: 16px;
 
     box-sizing: border-box;
 }
 
 
-/* HEADING */
+/* ======================================================
+   INFORMATION HEADING
+   ====================================================== */
 
 .calculator-info h2 {
     margin: 0 0 25px;
@@ -600,7 +655,9 @@
 }
 
 
-/* INFO BOX */
+/* ======================================================
+   INFO BOX
+   ====================================================== */
 
 .info-box {
     padding: 22px;
@@ -612,10 +669,23 @@
     border-radius: 11px;
 
     text-align: center;
+
+    transition:
+        transform 0.2s ease,
+        box-shadow 0.2s ease;
+}
+
+.info-box:hover {
+    transform: translateY(-2px);
+
+    box-shadow:
+        0 5px 15px rgba(15, 23, 42, 0.05);
 }
 
 
-/* ICON */
+/* ======================================================
+   INFO ICON
+   ====================================================== */
 
 .info-icon {
     display: flex;
@@ -630,7 +700,7 @@
 
     margin: 0 auto 12px;
 
-    background: #eaf7ed;
+    background: #dcfce7;
 
     border-radius: 50%;
 
@@ -638,7 +708,9 @@
 }
 
 
-/* INFO HEADING */
+/* ======================================================
+   INFO HEADING
+   ====================================================== */
 
 .info-box h3 {
     margin: 0 0 8px;
@@ -649,7 +721,9 @@
 }
 
 
-/* INFO TEXT */
+/* ======================================================
+   INFO TEXT
+   ====================================================== */
 
 .info-box p {
     margin: 0;
@@ -712,17 +786,14 @@
         width: 92%;
     }
 
-
     .calculator-container {
         grid-template-columns: 1fr;
     }
-
 
     .calculator-card,
     .result-card {
         width: 100%;
     }
-
 }
 
 
@@ -738,28 +809,23 @@
         padding: 30px 0 45px;
     }
 
-
     .calculator-page .page-header h1 {
         font-size: 29px;
     }
 
-
     .calculator-page .page-header p {
         font-size: 14px;
     }
-
 
     .calculator-card,
     .result-card {
         padding: 21px;
     }
 
-
     .calculator-card h2,
     .result-card h2 {
         font-size: 20px;
     }
-
 
     /* ADD METHOD */
 
@@ -767,13 +833,11 @@
         grid-template-columns: 1fr;
     }
 
-
     /* QUANTITY */
 
     .quantity-input {
         grid-template-columns: 1fr;
     }
-
 
     /* NUTRITION */
 
@@ -781,11 +845,9 @@
         grid-template-columns: 1fr;
     }
 
-
     .result-item {
         min-height: 65px;
     }
-
 
     /* INFORMATION */
 
@@ -793,16 +855,13 @@
         padding: 22px 17px;
     }
 
-
     .info-grid {
         grid-template-columns: 1fr;
     }
 
-
     .result-calories strong {
         font-size: 28px;
     }
-
 }
 
 
@@ -819,7 +878,6 @@
 
         gap: 5px;
     }
-
 
     .selected-food strong {
         max-width: 100%;
