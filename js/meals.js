@@ -63,12 +63,13 @@ function getToday() {
 // ======================================================
 
 function getDailyGoal() {
-  const savedGoal = localStorage.getItem("dailyCalorieGoal");
+  const storageKey = getUserStorageKey("dailyCalorieGoal");
+  if (!storageKey) return 2000;
 
+  const savedGoal = localStorage.getItem(storageKey);
   if (savedGoal !== null && !isNaN(Number(savedGoal))) {
     return Number(savedGoal);
   }
-
   return 2000;
 }
 
@@ -77,7 +78,9 @@ function getDailyGoal() {
 // ======================================================
 
 function saveDailyGoal(goal) {
-  localStorage.setItem("dailyCalorieGoal", String(goal));
+  const storageKey = getUserStorageKey("dailyCalorieGoal");
+  if (!storageKey) return;
+  localStorage.setItem(storageKey, String(goal));
 }
 
 // ======================================================
@@ -85,7 +88,14 @@ function saveDailyGoal(goal) {
 // ======================================================
 
 function getCalorieData() {
-  return JSON.parse(localStorage.getItem("calorieTrackerData")) || {};
+  const storageKey = getUserStorageKey("calorieTrackerData");
+  if (!storageKey) return {};
+  try {
+    const data = JSON.parse(localStorage.getItem(storageKey) || "{}");
+    return data && typeof data === "object" && !Array.isArray(data) ? data : {};
+  } catch {
+    return {};
+  }
 }
 
 // ======================================================
@@ -93,7 +103,9 @@ function getCalorieData() {
 // ======================================================
 
 function saveCalorieData(data) {
-  localStorage.setItem("calorieTrackerData", JSON.stringify(data));
+  const storageKey = getUserStorageKey("calorieTrackerData");
+  if (!storageKey) return;
+  localStorage.setItem(storageKey, JSON.stringify(data));
 }
 
 // ======================================================

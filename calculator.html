@@ -30,6 +30,8 @@
         <a href="history.html">Track Calories Intake</a>
 
         <a href="about.html"> About </a>
+        <span id="loggedInUser"></span>
+        <button type="button" onclick="logout()">Logout</button>
       </nav>
     </header>
 
@@ -405,10 +407,14 @@
 
     <!-- ================= JAVASCRIPT ================= -->
 
-    <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+      protectPage();
+      displayLoggedInUser();
+    </script>
 
     <script src="data/foods.js"></script>
-
+    <script src="js/main.js"></script>
     <script src="js/calculator.js"></script>
   </body>
 </html>

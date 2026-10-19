@@ -30,6 +30,8 @@
         <a href="history.html" class="active"> Track Calories Intake </a>
 
         <a href="about.html"> About </a>
+        <span id="loggedInUser"></span>
+        <button type="button" onclick="logout()">Logout</button>
       </nav>
     </header>
 
@@ -269,8 +271,25 @@
 
     <!-- ================= JAVASCRIPT ================= -->
 
+   
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <!-- 1. Load authentication functions first -->
+    <script src="js/auth.js"></script>
+
+    <!-- 2. Protect the page and display the user -->
+    <script>
+      protectPage();
+      displayLoggedInUser();
+    </script>
+
+    <!-- 3. Load common functions -->
     <script src="js/main.js"></script>
 
+    <!-- 4. Load history logic last -->
     <script src="js/history.js"></script>
+  </body>
+</html>
+
   </body>
 </html>

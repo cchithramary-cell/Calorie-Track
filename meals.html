@@ -1,512 +1,276 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="en">
+  <head>
+    <meta charset="UTF-8" />
 
-<head>
-
-    <meta charset="UTF-8">
-
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
     <title>Track Meals - CalorieTrack</title>
 
     <!-- Common CSS -->
-    <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="css/style.css" />
 
     <!-- Meals CSS -->
-    <link rel="stylesheet" href="css/meals.css">
+    <link rel="stylesheet" href="css/meals.css" />
+  </head>
 
-</head>
-
-
-<body>
-
-
+  <body>
     <!-- ================= NAVBAR ================= -->
 
     <header class="navbar">
+      <div class="logo">🍎 CalorieTrack</div>
 
-        <div class="logo">
-            🍎 CalorieTrack
-        </div>
+      <nav>
+        <a href="index.html"> Home </a>
 
+        <a href="meals.html" class="active"> Track Meals </a>
 
-        <nav>
+        <a href="calculator.html"> Calorie Calculator </a>
 
-            <a href="index.html">
-                Home
-            </a>
+        <a href="history.html"> Track Calories Intake </a>
 
-            <a href="meals.html" class="active">
-                Track Meals
-            </a>
-
-            <a href="calculator.html">
-                Calorie Calculator
-            </a>
-
-            <a href="history.html">
-                Track Calories Intake
-            </a>
-
-            <a href="about.html">
-                About
-            </a>
-
-        </nav>
-
+        <a href="about.html"> About </a>
+        <span id="loggedInUser"></span>
+        <button type="button" onclick="logout()">Logout</button>
+      </nav>
     </header>
-
-
 
     <!-- ================= MAIN ================= -->
 
     <main class="meals-page">
+      <!-- ================= PAGE HEADER ================= -->
 
+      <section class="page-header">
+        <h1>Daily Meal Tracker</h1>
 
-        <!-- ================= PAGE HEADER ================= -->
+        <p>Track your food intake and monitor your daily calories.</p>
+      </section>
 
-        <section class="page-header">
+      <!-- ================= DATE SECTION ================= -->
 
-            <h1>
-                Daily Meal Tracker
-            </h1>
+      <section class="date-section">
+        <div class="date-selector">
+          <label for="dateInput"> 📅 Select Date </label>
 
-            <p>
-                Track your food intake and monitor your daily calories.
-            </p>
+          <input type="date" id="dateInput" />
+        </div>
 
-        </section>
+        <a href="calculator.html" class="btn primary-btn"> + Add Food </a>
+      </section>
 
+      <!-- ================================================= -->
+      <!-- DAILY CALORIE GOAL -->
+      <!-- ================================================= -->
 
+      <section class="goal-section">
+        <div class="goal-header">
+          <div>
+            <h2>🎯 Daily Calorie Goal</h2>
 
-        <!-- ================= DATE SECTION ================= -->
+            <p>Set your personal daily calorie target.</p>
+          </div>
+        </div>
 
-        <section class="date-section">
+        <div class="goal-form">
+          <input
+            type="number"
+            id="dailyGoalInput"
+            min="500"
+            max="10000"
+            placeholder="Enter calories"
+          />
 
-            <div class="date-selector">
+          <span> kcal </span>
 
-                <label for="dateInput">
-                    📅 Select Date
-                </label>
+          <button type="button" id="saveGoalBtn" class="btn primary-btn">
+            Save Goal
+          </button>
+        </div>
+      </section>
 
-                <input
-                    type="date"
-                    id="dateInput"
-                >
+      <!-- ================================================= -->
+      <!-- DAILY SUMMARY -->
+      <!-- ================================================= -->
 
+      <section class="daily-summary">
+        <!-- TOTAL CALORIES -->
+
+        <div class="summary-card">
+          <span class="summary-label"> Consumed </span>
+
+          <strong id="totalCalories"> 0 kcal </strong>
+        </div>
+
+        <!-- REMAINING -->
+
+        <div class="summary-card">
+          <span class="summary-label"> Remaining </span>
+
+          <strong id="remainingCalories"> 2000 kcal </strong>
+        </div>
+
+        <!-- PROTEIN -->
+
+        <div class="summary-card">
+          <span class="summary-label"> Protein </span>
+
+          <strong id="totalProtein"> Not provided </strong>
+        </div>
+
+        <!-- CARBS -->
+
+        <div class="summary-card">
+          <span class="summary-label"> Carbohydrates </span>
+
+          <strong id="totalCarbs"> Not provided </strong>
+        </div>
+
+        <!-- FAT -->
+
+        <div class="summary-card">
+          <span class="summary-label"> Fat </span>
+
+          <strong id="totalFat"> Not provided </strong>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- PROGRESS -->
+      <!-- ================================================= -->
+
+      <section class="progress-section">
+        <div class="progress-header">
+          <h2>Daily Progress</h2>
+
+          <strong id="progressPercentage"> 0% </strong>
+        </div>
+
+        <div class="progress-bar">
+          <div id="progressFill" class="progress-fill"></div>
+        </div>
+
+        <p>
+          Daily target:
+          <strong id="dailyTargetText"> 2000 kcal </strong>
+        </p>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- MEALS -->
+      <!-- ================================================= -->
+
+      <section class="meals-container">
+        <!-- ================= BREAKFAST ================= -->
+
+        <div class="meal-card">
+          <div class="meal-header">
+            <div>
+              <h2>🍳 Breakfast</h2>
+
+              <p>Morning meal</p>
             </div>
 
+            <strong id="breakfastCalories"> 0 kcal </strong>
+          </div>
 
-            <a
-                href="calculator.html"
-                class="btn primary-btn">
+          <div id="breakfastItems" class="meal-items">
+            <p class="empty-message">No food added yet.</p>
+          </div>
+        </div>
 
-                + Add Food
+        <!-- ================= LUNCH ================= -->
 
-            </a>
+        <div class="meal-card">
+          <div class="meal-header">
+            <div>
+              <h2>🍚 Lunch</h2>
 
-        </section>
-
-
-
-        <!-- ================================================= -->
-        <!-- DAILY CALORIE GOAL -->
-        <!-- ================================================= -->
-
-        <section class="goal-section">
-
-
-            <div class="goal-header">
-
-                <div>
-
-                    <h2>
-                        🎯 Daily Calorie Goal
-                    </h2>
-
-                    <p>
-                        Set your personal daily calorie target.
-                    </p>
-
-                </div>
-
+              <p>Afternoon meal</p>
             </div>
 
+            <strong id="lunchCalories"> 0 kcal </strong>
+          </div>
 
-            <div class="goal-form">
+          <div id="lunchItems" class="meal-items">
+            <p class="empty-message">No food added yet.</p>
+          </div>
+        </div>
 
-                <input
-                    type="number"
-                    id="dailyGoalInput"
-                    min="500"
-                    max="10000"
-                    placeholder="Enter calories"
-                >
+        <!-- ================= SNACKS ================= -->
 
+        <div class="meal-card">
+          <div class="meal-header">
+            <div>
+              <h2>🍎 Snacks</h2>
 
-                <span>
-                    kcal
-                </span>
-
-
-                <button
-                    type="button"
-                    id="saveGoalBtn"
-                    class="btn primary-btn">
-
-                    Save Goal
-
-                </button>
-
+              <p>Snacks and small meals</p>
             </div>
 
+            <strong id="snacksCalories"> 0 kcal </strong>
+          </div>
 
-        </section>
+          <div id="snacksItems" class="meal-items">
+            <p class="empty-message">No food added yet.</p>
+          </div>
+        </div>
 
+        <!-- ================= DINNER ================= -->
 
+        <div class="meal-card">
+          <div class="meal-header">
+            <div>
+              <h2>🍽️ Dinner</h2>
 
-        <!-- ================================================= -->
-        <!-- DAILY SUMMARY -->
-        <!-- ================================================= -->
-
-        <section class="daily-summary">
-
-
-            <!-- TOTAL CALORIES -->
-
-            <div class="summary-card">
-
-                <span class="summary-label">
-                    Consumed
-                </span>
-
-                <strong id="totalCalories">
-                    0 kcal
-                </strong>
-
+              <p>Evening meal</p>
             </div>
 
-
-
-            <!-- REMAINING -->
-
-            <div class="summary-card">
-
-                <span class="summary-label">
-                    Remaining
-                </span>
-
-                <strong id="remainingCalories">
-                    2000 kcal
-                </strong>
-
-            </div>
-
-
-
-            <!-- PROTEIN -->
-
-            <div class="summary-card">
-
-                <span class="summary-label">
-                    Protein
-                </span>
-
-                <strong id="totalProtein">
-                    Not provided
-                </strong>
-
-            </div>
-
-
-
-            <!-- CARBS -->
-
-            <div class="summary-card">
-
-                <span class="summary-label">
-                    Carbohydrates
-                </span>
-
-                <strong id="totalCarbs">
-                    Not provided
-                </strong>
-
-            </div>
-
-
-
-            <!-- FAT -->
-
-            <div class="summary-card">
-
-                <span class="summary-label">
-                    Fat
-                </span>
-
-                <strong id="totalFat">
-                    Not provided
-                </strong>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ================================================= -->
-        <!-- PROGRESS -->
-        <!-- ================================================= -->
-
-        <section class="progress-section">
-
-
-            <div class="progress-header">
-
-                <h2>
-                    Daily Progress
-                </h2>
-
-                <strong id="progressPercentage">
-                    0%
-                </strong>
-
-            </div>
-
-
-            <div class="progress-bar">
-
-                <div
-                    id="progressFill"
-                    class="progress-fill">
-                </div>
-
-            </div>
-
-
-            <p>
-                Daily target:
-                <strong id="dailyTargetText">
-                    2000 kcal
-                </strong>
-            </p>
-
-
-        </section>
-
-
-
-        <!-- ================================================= -->
-        <!-- MEALS -->
-        <!-- ================================================= -->
-
-        <section class="meals-container">
-
-
-            <!-- ================= BREAKFAST ================= -->
-
-            <div class="meal-card">
-
-                <div class="meal-header">
-
-                    <div>
-
-                        <h2>
-                            🍳 Breakfast
-                        </h2>
-
-                        <p>
-                            Morning meal
-                        </p>
-
-                    </div>
-
-
-                    <strong id="breakfastCalories">
-                        0 kcal
-                    </strong>
-
-                </div>
-
-
-                <div
-                    id="breakfastItems"
-                    class="meal-items">
-
-                    <p class="empty-message">
-                        No food added yet.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ================= LUNCH ================= -->
-
-            <div class="meal-card">
-
-                <div class="meal-header">
-
-                    <div>
-
-                        <h2>
-                            🍚 Lunch
-                        </h2>
-
-                        <p>
-                            Afternoon meal
-                        </p>
-
-                    </div>
-
-
-                    <strong id="lunchCalories">
-                        0 kcal
-                    </strong>
-
-                </div>
-
-
-                <div
-                    id="lunchItems"
-                    class="meal-items">
-
-                    <p class="empty-message">
-                        No food added yet.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ================= SNACKS ================= -->
-
-            <div class="meal-card">
-
-                <div class="meal-header">
-
-                    <div>
-
-                        <h2>
-                            🍎 Snacks
-                        </h2>
-
-                        <p>
-                            Snacks and small meals
-                        </p>
-
-                    </div>
-
-
-                    <strong id="snacksCalories">
-                        0 kcal
-                    </strong>
-
-                </div>
-
-
-                <div
-                    id="snacksItems"
-                    class="meal-items">
-
-                    <p class="empty-message">
-                        No food added yet.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-
-            <!-- ================= DINNER ================= -->
-
-            <div class="meal-card">
-
-                <div class="meal-header">
-
-                    <div>
-
-                        <h2>
-                            🍽️ Dinner
-                        </h2>
-
-                        <p>
-                            Evening meal
-                        </p>
-
-                    </div>
-
-
-                    <strong id="dinnerCalories">
-                        0 kcal
-                    </strong>
-
-                </div>
-
-
-                <div
-                    id="dinnerItems"
-                    class="meal-items">
-
-                    <p class="empty-message">
-                        No food added yet.
-                    </p>
-
-                </div>
-
-            </div>
-
-
-        </section>
-
-
-
-        <!-- ================================================= -->
-        <!-- CLEAR DAY -->
-        <!-- ================================================= -->
-
-        <section class="clear-section">
-
-            <button
-                type="button"
-                id="clearDayBtn"
-                class="btn danger-btn">
-
-                🗑️ Clear This Day
-
-            </button>
-
-        </section>
-
-
+            <strong id="dinnerCalories"> 0 kcal </strong>
+          </div>
+
+          <div id="dinnerItems" class="meal-items">
+            <p class="empty-message">No food added yet.</p>
+          </div>
+        </div>
+      </section>
+
+      <!-- ================================================= -->
+      <!-- CLEAR DAY -->
+      <!-- ================================================= -->
+
+      <section class="clear-section">
+        <button type="button" id="clearDayBtn" class="btn danger-btn">
+          🗑️ Clear This Day
+        </button>
+      </section>
     </main>
-
-
 
     <!-- ================= FOOTER ================= -->
 
     <footer>
-
-        <p>
-            © 2026 CalorieTrack. All rights reserved.
-        </p>
-
+      <p>© 2026 CalorieTrack. All rights reserved.</p>
     </footer>
-
-
 
     <!-- ================= JAVASCRIPT ================= -->
 
+   
+    <!-- ================= JAVASCRIPT ================= -->
+
+    <!-- 1. Load authentication functions first -->
+    <script src="js/auth.js"></script>
+
+    <!-- 2. Protect the page and show the logged-in user -->
+    <script>
+      protectPage();
+      displayLoggedInUser();
+    </script>
+
+    <!-- 3. Load common functions -->
     <script src="js/main.js"></script>
 
+    <!-- 4. Load meal tracking logic last -->
     <script src="js/meals.js"></script>
+  </body>
+</html>
 
-</body>
-
+  </body>
 </html>

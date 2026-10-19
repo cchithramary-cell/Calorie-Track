@@ -23,8 +23,10 @@
         <a href="index.html" class="active">Home</a>
         <a href="meals.html">Track Meals</a>
         <a href="calculator.html">Calorie Calculator</a>
-         <a href="history.html">Track Calories Intake</a>
+        <a href="history.html">Track Calories Intake</a>
         <a href="about.html">About</a>
+        <span id="loggedInUser"></span>
+        <button type="button" onclick="logout()">Logout</button>
       </nav>
     </header>
 
@@ -159,5 +161,12 @@
 
     <!-- JavaScript -->
     <script src="js/main.js"></script>
+    <script src="js/auth.js"></script>
+    <script>
+      protectPage();
+    </script>
+    <script>
+    displayLoggedInUser();
+</script>
   </body>
 </html>

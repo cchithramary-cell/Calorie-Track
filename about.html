@@ -30,6 +30,8 @@
         <a href="history.html"> Track Calories Intake </a>
 
         <a href="about.html" class="active"> About </a>
+        <span id="loggedInUser"></span>
+        <button type="button" onclick="logout()">Logout</button>
       </nav>
     </header>
 
@@ -312,5 +314,12 @@
     <footer>
       <p>© 2026 CalorieTrack. All rights reserved.</p>
     </footer>
+    <script src="js/auth.js"></script>
+    <script>
+      protectPage();
+    </script>
+    <script>
+    displayLoggedInUser();
+</script>
   </body>
 </html>
